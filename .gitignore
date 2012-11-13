@@ -20,6 +20,7 @@ DerivedData
 */.DS_Store
 *.swp
 *~.nib
+*.xcuserstate
 
 build/
 
@@ -75,4 +76,4 @@ doxygenWarnings.txt
 Icon?
 ehthumbs.db
 Thumbs.db
-*.xcuserstate
+
