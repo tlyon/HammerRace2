@@ -75,3 +75,4 @@ doxygenWarnings.txt
 Icon?
 ehthumbs.db
 Thumbs.db
+*.xcuserstate
