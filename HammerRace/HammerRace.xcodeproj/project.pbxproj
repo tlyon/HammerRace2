@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3444A1EE1652E73B00F2DD71 /* BluetoothAndScoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 3444A1ED1652E73B00F2DD71 /* BluetoothAndScoring.m */; };
 		34C2FEFB1652C781009CE61D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C2FEFA1652C781009CE61D /* UIKit.framework */; };
 		34C2FEFD1652C781009CE61D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C2FEFC1652C781009CE61D /* Foundation.framework */; };
 		34C2FEFF1652C781009CE61D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C2FEFE1652C781009CE61D /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3444A1EC1652E73B00F2DD71 /* BluetoothAndScoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothAndScoring.h; sourceTree = "<group>"; };
+		3444A1ED1652E73B00F2DD71 /* BluetoothAndScoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAndScoring.m; sourceTree = "<group>"; };
 		34C2FEF61652C781009CE61D /* HammerRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HammerRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C2FEFA1652C781009CE61D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		34C2FEFC1652C781009CE61D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				34C2FF091652C781009CE61D /* AppDelegate.h */,
+				3444A1EC1652E73B00F2DD71 /* BluetoothAndScoring.h */,
+				3444A1ED1652E73B00F2DD71 /* BluetoothAndScoring.m */,
 				34C2FF0A1652C781009CE61D /* AppDelegate.m */,
 				34C2FF121652C781009CE61D /* MainStoryboard_iPhone.storyboard */,
 				34C2FF151652C781009CE61D /* MainStoryboard_iPad.storyboard */,
@@ -283,6 +288,7 @@
 				34C2FF0B1652C781009CE61D /* AppDelegate.m in Sources */,
 				34C2FF1A1652C781009CE61D /* MainViewController.m in Sources */,
 				34C2FF1D1652C781009CE61D /* FlipsideViewController.m in Sources */,
+				3444A1EE1652E73B00F2DD71 /* BluetoothAndScoring.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +473,7 @@
 				34C2FF371652C782009CE61D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34C2FF381652C782009CE61D /* Build configuration list for PBXNativeTarget "HammerRaceTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +482,7 @@
 				34C2FF3A1652C782009CE61D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
