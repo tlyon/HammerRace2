@@ -14,6 +14,11 @@
 
 @implementation MainViewController
 
+- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
+    NSLog(@"Acceleration Event (x:%g, y:%g, z:%g)", acceleration.x, acceleration.y, acceleration.z);
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -24,6 +29,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL) animated
+{
+    [UIAccelerometer sharedAccelerometer].delegate = self; // tell the singleton instance of UIAccelerometer
+}
+
+- (void)viewWillDisappear:(BOOL) animated
+{
+    [UIAccelerometer sharedAccelerometer].delegate = nil;
 }
 
 #pragma mark - Flipside View Controller
