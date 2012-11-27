@@ -20,24 +20,33 @@
 @end
 
 @implementation MainViewController
-
+@synthesize lastXVal;
+@synthesize lastYVal;
+@synthesize lastZVal;
+//int waitTime = 20;
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
-   // NSLog(@"Acceleration Event (x:%g, y:%g, z:%g)", acceleration.x, acceleration.y, acceleration.z);
     int degrees = (int)((-1 - acceleration.x) * 90);
     NSLog(@"degree = %i", degrees);
     [self rotateImage:background degrees:((-1 - acceleration.x) * 90)];
-    
+    if(acceleration.x - lastXVal >= .7 || acceleration.x - lastXVal <= -.7){
+        NSLog(@"Strum event: lastX:%g, X:%g", lastXVal, acceleration.x);
+    }
     if (degrees > last_degrees) {
         if (degrees > 90) {
             percentComplete -= 5;
         } 
     }
+    //        wait(&waitTime);
+    lastXVal = acceleration.x;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     last_degrees = -90;
+    lastXVal = 0;
+    lastYVal = 0;
+    lastZVal = 0;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

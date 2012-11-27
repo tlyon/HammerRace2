@@ -16,7 +16,12 @@
 }
 
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
+@property float lastXVal;
+@property float lastYVal;
+@property float lastZVal;
 - (IBAction)pullBack:(id)sender;
 - (IBAction)hit:(id)sender;
-
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration;
 @end
