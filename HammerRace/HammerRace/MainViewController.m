@@ -21,8 +21,9 @@
 @implementation MainViewController
 
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
-    NSLog(@"Acceleration Event (x:%g, y:%g, z:%g)", acceleration.x, acceleration.y, acceleration.z);
-    
+   // NSLog(@"Acceleration Event (x:%g, y:%g, z:%g)", acceleration.x, acceleration.y, acceleration.z);
+    NSLog(@"degree = %i", (int)((-1 - acceleration.x) * 90));
+    [self rotateImage:background degrees:((-1 - acceleration.x) * 90)];
 }
 
 - (void)viewDidLoad
