@@ -107,8 +107,8 @@
     </scenes>
     <resources>
         <image name="hammer.png" width="578" height="878"/>
-        <image name="landscape.png" width="16" height="16"/>
-        <image name="landscape100.png" width="16" height="16"/>
+        <image name="landscape.png" width="2495" height="2495"/>
+        <image name="landscape100.png" width="2495" height="2495"/>
     </resources>
     <classes>
         <class className="FlipsideViewController" superclassName="UIViewController">
