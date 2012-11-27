@@ -23,13 +23,21 @@
 
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
    // NSLog(@"Acceleration Event (x:%g, y:%g, z:%g)", acceleration.x, acceleration.y, acceleration.z);
-    NSLog(@"degree = %i", (int)((-1 - acceleration.x) * 90));
+    int degrees = (int)((-1 - acceleration.x) * 90);
+    NSLog(@"degree = %i", degrees);
     [self rotateImage:background degrees:((-1 - acceleration.x) * 90)];
+    
+    if (degrees > last_degrees) {
+        if (degrees > 90) {
+            percentComplete -= 5;
+        } 
+    }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    last_degrees = -90;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

@@ -11,6 +11,7 @@
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate, UIAccelerometerDelegate>{
     IBOutlet UIImageView *background;
     int percentComplete;
+    int last_degrees;
     
 }
 
