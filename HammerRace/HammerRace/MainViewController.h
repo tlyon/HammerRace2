@@ -10,15 +10,13 @@
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate, UIAccelerometerDelegate>{
     IBOutlet UIImageView *background;
-    int percentComplete;
     int last_degrees;
     
 }
 
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
 @property float lastXVal;
-@property float lastYVal;
-@property float lastZVal;
+@property float percentComplete;
 - (IBAction)pullBack:(id)sender;
 - (IBAction)hit:(id)sender;
 - (void)viewWillAppear:(BOOL)animated;
