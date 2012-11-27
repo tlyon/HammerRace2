@@ -7,6 +7,12 @@
 //
 
 #import "MainViewController.h"
+#import <QuartzCore/QuartzCore.h>
+// This is defined in Math.h
+#define M_PI   3.14159265358979323846264338327950288   /* pi */
+
+// Our conversion definition
+#define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
 
 @interface MainViewController ()
 
@@ -79,6 +85,33 @@
     } else {
         [self performSegueWithIdentifier:@"showAlternate" sender:sender];
     }
+}
+
+- (void)rotateImage:(UIImageView *)image degrees:(CGFloat)degrees
+{
+    // Setup the animation
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.0];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    
+    // The transform matrix
+    CGAffineTransform transform =
+    CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(degrees));
+    image.transform = transform;
+    
+    // Commit the changes
+    [UIView commitAnimations];
+
+}
+
+- (IBAction)hit:(id)sender{
+       [self rotateImage:background degrees:-10];
+}
+
+
+- (IBAction)pullBack:(id)sender{
+    [self rotateImage:background degrees:-90];
 }
 
 @end

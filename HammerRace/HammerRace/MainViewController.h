@@ -8,8 +8,14 @@
 
 #import "FlipsideViewController.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate, UIAccelerometerDelegate>
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate, UIAccelerometerDelegate>{
+    IBOutlet UIImageView *background;
+    int percentComplete;
+    
+}
 
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
+- (IBAction)pullBack:(id)sender;
+- (IBAction)hit:(id)sender;
 
 @end
