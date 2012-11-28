@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3444A1EE1652E73B00F2DD71 /* BluetoothAndScoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 3444A1ED1652E73B00F2DD71 /* BluetoothAndScoring.m */; };
+		349B3B7B1666B027007426C5 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349B3B7A1666B027007426C5 /* GameKit.framework */; };
 		34C2FEFB1652C781009CE61D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C2FEFA1652C781009CE61D /* UIKit.framework */; };
 		34C2FEFD1652C781009CE61D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C2FEFC1652C781009CE61D /* Foundation.framework */; };
 		34C2FEFF1652C781009CE61D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C2FEFE1652C781009CE61D /* CoreGraphics.framework */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		3444A1EC1652E73B00F2DD71 /* BluetoothAndScoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothAndScoring.h; sourceTree = "<group>"; };
 		3444A1ED1652E73B00F2DD71 /* BluetoothAndScoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAndScoring.m; sourceTree = "<group>"; };
+		349B3B7A1666B027007426C5 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		34C2FEF61652C781009CE61D /* HammerRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HammerRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C2FEFA1652C781009CE61D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		34C2FEFC1652C781009CE61D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				349B3B7B1666B027007426C5 /* GameKit.framework in Frameworks */,
 				34C2FEFB1652C781009CE61D /* UIKit.framework in Frameworks */,
 				34C2FEFD1652C781009CE61D /* Foundation.framework in Frameworks */,
 				34C2FEFF1652C781009CE61D /* CoreGraphics.framework in Frameworks */,
@@ -111,6 +114,7 @@
 		34C2FEEB1652C781009CE61D = {
 			isa = PBXGroup;
 			children = (
+				349B3B7A1666B027007426C5 /* GameKit.framework */,
 				34C2FF001652C781009CE61D /* HammerRace */,
 				34C2FF2A1652C782009CE61D /* HammerRaceTests */,
 				34C2FEF91652C781009CE61D /* Frameworks */,

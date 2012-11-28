@@ -7,14 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GameKit/GameKit.h>
 
-@interface BluetoothAndScoring : NSObject
+@interface BluetoothAndScoring : NSObject<GKPeerPickerControllerDelegate, GKSessionDelegate>{
+    GKPeerPickerController *myPicker;
+    GKSession *mySession;
+    NSString *myPeerID;
+}
 
 //called from view when wanting to connect to a find a partner
 //returns true when successful
--(BOOL)connectToPeer;
-
--(int)ready;
++(BluetoothAndScoring*)getInstance;
++(BOOL)connectToPeer;
++(int)ready;
 
 
 @end
