@@ -24,9 +24,7 @@
 @synthesize percentComplete;
 int waitTime = 5;
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
-    int degrees = (int)((-1 - acceleration.x) * 90);
-    //NSLog(@"degree = %i", degrees);
-    [self rotateImage:background degrees:((-1 - acceleration.x) * 90)];
+    
     if(acceleration.x - lastXVal >= .7 || acceleration.x - lastXVal <= -.7){
         NSLog(@"Strum event: lastX:%g, X:%g", lastXVal, acceleration.x);
         //determine if swing or loading
@@ -39,6 +37,14 @@ int waitTime = 5;
     
     //wait(&waitTime);
     lastXVal = acceleration.x;
+    
+    if(acceleration.y>0){
+        
+    }
+    else{
+        NSLog(@"degree = %i",(int)((-1-acceleration.x) * 90));
+        [self rotateImage:background degrees:(int)((-1-acceleration.x) * 90)];
+    }
 }
 
 - (void)viewDidLoad

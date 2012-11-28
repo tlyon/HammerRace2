@@ -24,7 +24,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="landscape100.png" id="rmM-Oe-FX3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="landscape0.png" id="rmM-Oe-FX3">
                                 <rect key="frame" x="-271" y="-205" width="1300" height="1300"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -108,7 +108,7 @@
     </scenes>
     <resources>
         <image name="hammer.png" width="578" height="878"/>
-        <image name="landscape100.png" width="2495" height="2495"/>
+        <image name="landscape0.png" width="2495" height="2495"/>
     </resources>
     <classes>
         <class className="FlipsideViewController" superclassName="UIViewController">
