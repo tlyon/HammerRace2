@@ -29,7 +29,8 @@ int waitTime = 5;
         NSLog(@"Strum event: lastX:%g, X:%g", lastXVal, acceleration.x);
         //determine if swing or loading
         if (acceleration.x < 0 && lastXVal > 0 ) {
-            percentComplete += -pow(acceleration.x + 0.5, 3);
+            //percentComplete += -pow(acceleration.x + .5, 3);
+            percentComplete += 10;
             NSLog(@"Hit value = %f", percentComplete);
         }
         
@@ -38,13 +39,15 @@ int waitTime = 5;
     //wait(&waitTime);
     lastXVal = acceleration.x;
     
-    if(acceleration.y>0){
-        
-    }
-    else{
+    if(acceleration.y<0 && acceleration.x>-1){
         NSLog(@"degree = %i",(int)((-1-acceleration.x) * 90));
         [self rotateImage:background degrees:(int)((-1-acceleration.x) * 90)];
+        [self changeBackground:percentComplete];
     }
+    else {
+        [self rotateImage:background degrees:0];
+    }
+   
 }
 
 - (void)viewDidLoad
@@ -52,6 +55,7 @@ int waitTime = 5;
     [super viewDidLoad];
     last_degrees = -90;
     lastXVal = 0;
+    [self changeBackground:55.0];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -115,27 +119,47 @@ int waitTime = 5;
 {
     // Setup the animation
     [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.0];
+    [UIView setAnimationDuration:0.1];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     [UIView setAnimationBeginsFromCurrentState:YES];
     
+    CGFloat modifiedDegrees = degrees;
+    if(percentComplete<25){
+        if(degrees>-15)modifiedDegrees=-15;
+    }else if (percentComplete<50){
+        if(degrees>-10)modifiedDegrees=-10;
+    }else if (percentComplete<75){
+        if(degrees>-1)modifiedDegrees=-5;
+    }else if (percentComplete<100){
+        if(degrees>-1)modifiedDegrees=-2;
+    }else{
+        
+    }
+    
     // The transform matrix
     CGAffineTransform transform =
-    CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(degrees));
+    CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(modifiedDegrees));
     image.transform = transform;
     
     // Commit the changes
     [UIView commitAnimations];
 
 }
-
-- (IBAction)hit:(id)sender{
-       [self rotateImage:background degrees:-10];
+- (void)changeBackground:(float)percentDone{
+    NSLog(@"%g",percentDone);
+    if(percentDone<25){
+        background.image = [UIImage imageNamed:@"landscape0.png"];
+    }else if (percentDone<50){
+        background.image = [UIImage imageNamed:@"landscape25.png"];
+    }else if (percentDone<75){
+        background.image = [UIImage imageNamed:@"landscape50.png"];
+    }else if (percentDone<100){
+        background.image = [UIImage imageNamed:@"landscape75.png"];
+    }else{
+        background.image = [UIImage imageNamed:@"landscape100.png"];
+    }
 }
 
 
-- (IBAction)pullBack:(id)sender{
-    [self rotateImage:background degrees:-90];
-}
 
 @end
