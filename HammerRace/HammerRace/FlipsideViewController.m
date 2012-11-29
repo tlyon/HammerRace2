@@ -24,12 +24,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    // load leftHandSwitch state from plist
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)onOffSwitch:(id)sender{
+    //write leftHandSwitch to plist
 }
 
 #pragma mark - Actions

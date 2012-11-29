@@ -14,10 +14,13 @@
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
 @end
 
-@interface FlipsideViewController : UIViewController
+@interface FlipsideViewController : UIViewController{
+    IBOutlet UISwitch *leftHandSwitch;
+}
 
 @property (weak, nonatomic) id <FlipsideViewControllerDelegate> delegate;
 
 - (IBAction)done:(id)sender;
+-(IBAction)onOffSwitch:(id)sender;
 
 @end

@@ -36,6 +36,12 @@ int waitTime = 5;
         
     }
     
+    //determine if completed
+    if (percentComplete > 100) {
+        //do stuff here
+        
+    }
+    
     //wait(&waitTime);
     lastXVal = acceleration.x;
     
