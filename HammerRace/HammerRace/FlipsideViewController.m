@@ -7,6 +7,7 @@
 //
 
 #import "FlipsideViewController.h"
+#import "BluetoothAndScoring.h"
 
 @interface FlipsideViewController ()
 
@@ -35,6 +36,11 @@
 
 -(IBAction)onOffSwitch:(id)sender{
     //write leftHandSwitch to plist
+}
+
+-(IBAction)connect:(id)sender{
+    BluetoothAndScoring* bluetooth = [BluetoothAndScoring getInstance];
+    [bluetooth connectToPeer];
 }
 
 #pragma mark - Actions

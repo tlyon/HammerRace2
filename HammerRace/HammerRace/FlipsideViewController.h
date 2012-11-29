@@ -22,5 +22,6 @@
 
 - (IBAction)done:(id)sender;
 -(IBAction)onOffSwitch:(id)sender;
+-(IBAction)connect:(id)sender;
 
 @end

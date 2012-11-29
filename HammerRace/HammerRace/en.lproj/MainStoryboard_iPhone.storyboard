@@ -77,6 +77,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="connect:" destination="6" eventType="touchDown" id="xjS-1U-4PS"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="g86-aq-QkI">
                                 <rect key="frame" x="212" y="80" width="79" height="27"/>
@@ -125,6 +128,7 @@
         <class className="FlipsideViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FlipsideViewController.h"/>
             <relationships>
+                <relationship kind="action" name="connect:"/>
                 <relationship kind="action" name="done:"/>
                 <relationship kind="action" name="onOffSwitch:"/>
                 <relationship kind="outlet" name="leftHandSwitch" candidateClass="UISwitch"/>
