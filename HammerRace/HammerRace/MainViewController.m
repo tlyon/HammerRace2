@@ -56,6 +56,10 @@ int waitTime = 5;
    
 }
 
+-(void)resetComplete{
+    percentComplete = 0;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

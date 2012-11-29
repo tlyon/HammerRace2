@@ -10,7 +10,8 @@
 
 @implementation BluetoothAndScoring
 static BluetoothAndScoring *singleton = nil;
-static AbsoluteTime *start_time = nil;
+static NSDate *start_time = nil;
+static NSDate* currentTime = nil;
 
 +(BluetoothAndScoring*)getInstance{
     @synchronized([BluetoothAndScoring class])
@@ -43,8 +44,8 @@ static AbsoluteTime *start_time = nil;
 }
 
 - (void) receiveData:(NSData *)data fromPeer:(NSString *)peer
-           inSession:(GKSession *)session context:(void *)context
-{
+           inSession:(GKSession *)session context:(void *)context{
+    NSDate * otherDate = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     
 }
 
@@ -54,7 +55,10 @@ static AbsoluteTime *start_time = nil;
     return [super init];
 }
 
--(AbsoluteTime*)ready{
+-(NSDate*)start{
+    currentTime = [NSDate date];
+    NSData* dataData = [NSKeyedArchiver archivedDataWithRootObject:currentTime];
+    [mySession sendDataToAllPeers:dataData withDataMode:GKSendDataReliable error:nil];
     return start_time;
 }
 

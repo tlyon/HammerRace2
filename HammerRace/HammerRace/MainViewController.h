@@ -19,6 +19,7 @@
 @property float percentComplete;
 - (IBAction)pullBack:(id)sender;
 - (IBAction)hit:(id)sender;
+-(void)resetComplete;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration;

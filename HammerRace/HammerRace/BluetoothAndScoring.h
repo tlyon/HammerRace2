@@ -19,7 +19,7 @@
 //returns true when successful
 +(BluetoothAndScoring*)getInstance;
 -(void)connectToPeer;
--(int)ready;
+-(NSDate*)start;
 
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID;
 
