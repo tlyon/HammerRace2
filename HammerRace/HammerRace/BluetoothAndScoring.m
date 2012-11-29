@@ -21,8 +21,9 @@ static BluetoothAndScoring *singleton = nil;
     return nil;
 }
 
-+(BOOL)connectToPeer{
-    
+-(BOOL)connectToPeer{
+    [myPicker show];
+
 }
 
 +(int)ready{
@@ -33,8 +34,9 @@ static BluetoothAndScoring *singleton = nil;
     
 }
 
-- (IBAction) connectBluetooth{
-    
+- (id) init{
+    myPicker = [[GKPeerPickerController alloc] init]; myPicker.delegate = self;
+    myPicker.connectionTypesMask = GKPeerPickerConnectionTypeNearby;
 }
 
 @end

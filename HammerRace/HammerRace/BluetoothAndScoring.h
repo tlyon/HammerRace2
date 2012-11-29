@@ -18,8 +18,9 @@
 //called from view when wanting to connect to a find a partner
 //returns true when successful
 +(BluetoothAndScoring*)getInstance;
-+(BOOL)connectToPeer;
+-(BOOL)connectToPeer;
 +(int)ready;
 
+- (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID;
 
 @end

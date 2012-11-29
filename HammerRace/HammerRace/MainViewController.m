@@ -29,8 +29,8 @@ int waitTime = 5;
         NSLog(@"Strum event: lastX:%g, X:%g", lastXVal, acceleration.x);
         //determine if swing or loading
         if (acceleration.x < 0 && lastXVal > 0 ) {
-            //percentComplete += -pow(acceleration.x + .5, 3);
-            percentComplete += 10;
+            percentComplete += pow(acceleration.x + .5, 4);
+            //percentComplete += 10;
             NSLog(@"Hit value = %f", percentComplete);
         }
         
