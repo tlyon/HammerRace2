@@ -135,7 +135,6 @@
             <relationships>
                 <relationship kind="action" name="hit:"/>
                 <relationship kind="action" name="pullBack:"/>
-                <relationship kind="action" name="togglePopover:"/>
                 <relationship kind="outlet" name="background" candidateClass="UIImageView"/>
             </relationships>
         </class>
