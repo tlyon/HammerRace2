@@ -20,8 +20,8 @@
 +(BluetoothAndScoring*)getInstance;
 -(void)connectToPeer;
 -(bool)isConnected;
--(void)start:(SEL)startMethod;
--(void)end:(SEL)updateText;
+-(void)start:(SEL)startMethod:(id)mainView;
+-(void)end:(SEL)updateText:(id)mainView;
 -(NSString*)endText;
 -(double)getCompletionTime;
 
