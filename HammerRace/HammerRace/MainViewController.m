@@ -212,7 +212,8 @@ int GameLength=100;
     
     BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
     if([blue isConnected]){
-       [blue start:@selector(startCountdown)]; 
+       [blue start:@selector(startCountdown)];
+        scoreDisplay.text =@"Waiting for partner...";
     }
     else{
         [self startCountdown];
@@ -229,6 +230,7 @@ int GameLength=100;
     
     if([blue isConnected]){
         [blue end:@selector(updateText)];
+        scoreDisplay.text = [NSString stringWithFormat:@"%g",(timecount)];
     }
     else{
         scoreDisplay.text = [NSString stringWithFormat:@"%g",(timecount)];
