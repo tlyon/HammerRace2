@@ -44,7 +44,7 @@ int GameLength=100;
     if (percentComplete > GameLength) {
         //do stuff here
         BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
-          [blue end:@selector(updateText)];
+        [blue end:@selector(updateText)];
     }
     
     //wait(&waitTime);
