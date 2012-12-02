@@ -15,17 +15,21 @@
     int lastpercent;
     IBOutlet UILabel *Counter;
     double timecount;
+    IBOutlet UIButton *startButton;
+    IBOutlet UILabel *connectionStatus;
+    IBOutlet UILabel *scoreDisplay;
+    int countdown;
     
 }
 
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
 @property float lastXVal;
 @property float percentComplete;
-- (IBAction)pullBack:(id)sender;
-- (IBAction)hit:(id)sender;
 -(void)resetComplete;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration;
 -(void)onTick:(NSTimer *)timer;
+-(IBAction)startGame;
+-(void)endGame;
 @end

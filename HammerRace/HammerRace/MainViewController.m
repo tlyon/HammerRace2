@@ -79,11 +79,7 @@ int GameLength=100;
     lastXVal = 0;
     timecount=0.0;
     [self changeBackground:0.0];
-    [NSTimer scheduledTimerWithTimeInterval:0.1
-                                     target:self
-                                   selector:@selector(onTick:)
-                                   userInfo:nil
-                                    repeats:YES];
+
 
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -191,8 +187,40 @@ int GameLength=100;
 -(void)onTick:(NSTimer *)timer {
     timecount+=0.1;
     Counter.text = [NSString stringWithFormat:@"%g",(timecount)];
+    if ((int)timecount>1) {
+        scoreDisplay.text = @"";
+    }
 }
 
+-(void)startGame{
+    [startButton setHidden:TRUE];
 
+    scoreDisplay.text = @"GO!";
+    NSLog(@"Starting!");
+    countdown=5;
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.1
+                                     target:self
+                                   selector:@selector(onTick:)
+                                   userInfo:nil
+                                    repeats:YES];
+    
+}
+
+//- (IBAction)startCountdown:(id)sender
+//{
+//    NSTimer *countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self     selector:@selector(advanceTimer:) userInfo:nil repeats:YES];
+//    NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+//    [runLoop addTimer:countdownTimer forMode:NSDefaultRunLoopMode];
+//}
+//
+//- (void)advanceTimer:(NSTimer *)timer
+//{
+//    [countdown setIntegerValue:([countdown integerValue] - 1)];
+//    if ([countdown integerValue] == 0)
+//    {
+//        // code to stop the timer
+//    }
+//}
 
 @end
