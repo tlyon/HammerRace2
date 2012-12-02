@@ -23,7 +23,7 @@
 @synthesize lastXVal;
 @synthesize percentComplete;
 int waitTime = 5;
-
+int GameLength=100;
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
     
     if(acceleration.x - lastXVal >= .7 || acceleration.x - lastXVal <= -.7){
@@ -40,7 +40,7 @@ int waitTime = 5;
     }
     
     //determine if completed
-    if (percentComplete > 100) {
+    if (percentComplete > GameLength) {
         //do stuff here
         
     }
@@ -153,13 +153,13 @@ int waitTime = 5;
     [UIView setAnimationBeginsFromCurrentState:YES];
     
     CGFloat modifiedDegrees = degrees;
-    if(percentComplete<25){
+    if(percentComplete<GameLength/4){
         if(degrees>-15 && degrees<90)modifiedDegrees=-15;
-    }else if (percentComplete<50){
+    }else if (percentComplete<GameLength/2){
         if(degrees>-10 && degrees<90)modifiedDegrees=-10;
-    }else if (percentComplete<75){
+    }else if (percentComplete<GameLength*3/4){
         if(degrees>-1 && degrees<90)modifiedDegrees=-5;
-    }else if (percentComplete<100){
+    }else if (percentComplete<GameLength){
         if(degrees>-1 && degrees<90)modifiedDegrees=-2;
     }else{
         
@@ -176,13 +176,13 @@ int waitTime = 5;
 }
 - (void)changeBackground:(float)percentDone{
     NSLog(@"%g",percentDone);
-    if(percentDone<25){
+    if(percentDone<GameLength/4){
         background.image = [UIImage imageNamed:@"landscape0.png"];
-    }else if (percentDone<50){
+    }else if (percentDone<GameLength/2){
         background.image = [UIImage imageNamed:@"landscape25.png"];
-    }else if (percentDone<75){
+    }else if (percentDone<GameLength*3/4){
         background.image = [UIImage imageNamed:@"landscape50.png"];
-    }else if (percentDone<100){
+    }else if (percentDone<GameLength){
         background.image = [UIImage imageNamed:@"landscape75.png"];
     }else{
         background.image = [UIImage imageNamed:@"landscape100.png"];
