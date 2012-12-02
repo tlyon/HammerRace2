@@ -26,7 +26,7 @@
 int waitTime = 5;
 int GameLength=100;
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
-    
+    if(running){
     if(acceleration.x - lastXVal >= .7 || acceleration.x - lastXVal <= -.7){
         // NSLog(@"Strum event: lastX:%g, X:%g", lastXVal, acceleration.x);
         //determine if swing or loading
@@ -63,6 +63,7 @@ int GameLength=100;
     else {
         [self rotateImage:background degrees:0];
     }
+    }
     
 }
 
@@ -74,6 +75,7 @@ int GameLength=100;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    running=false;
     last_degrees = -90;
     lastpercent=25;
     lastXVal = 0;
@@ -201,6 +203,7 @@ int GameLength=100;
         countdownTimer=nil;
         scoreDisplay.text = @"GO!";
         [self startTimer];
+        running=true;
     }
 }
 
@@ -223,6 +226,7 @@ int GameLength=100;
 }
 
 -(void)endGame{
+    running=false;
     Timer.invalidate;
     Timer=nil;
     percent.text=@"100 %";

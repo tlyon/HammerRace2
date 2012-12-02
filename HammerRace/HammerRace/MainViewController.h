@@ -23,6 +23,7 @@
     int countdown;
     NSTimer *countdownTimer;
     NSTimer *Timer;
+    BOOL running;
     
 }
 
