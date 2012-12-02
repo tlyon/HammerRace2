@@ -17,6 +17,8 @@ static NSDate* currentTime = nil;
 static double completionTime = -1;
 static double otherCompletionTime = -1;
 static SEL mainViewStart = nil;
+static SEL mainViewEndText = nil;
+static NSString* endText;
 
 +(BluetoothAndScoring*)getInstance{
     @synchronized([BluetoothAndScoring class])
@@ -56,15 +58,18 @@ static SEL mainViewStart = nil;
             startTime = [NSDate date];
             mainViewStart;
         }
-    } else{
+    } else if(endTime != nil){
         [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
         //compare completion times
         if (otherCompletionTime > completionTime) {
-            //we win
+            mainViewEndText;
         } else{
             //we lost
+            mainViewEndText;
         }
         
+    } else{
+        [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
     }
     
     
@@ -86,12 +91,33 @@ static SEL mainViewStart = nil;
     }
 }
 
--(void)end{
+-(NSString*)end:(SEL)updateText{
     NSDate* endTime = [NSDate date];
     completionTime = [startTime timeIntervalSinceDate:endTime];
     NSData* dateData = [NSData dataWithBytes:&completionTime length:sizeof(completionTime)];
     [mySession sendDataToAllPeers:dateData withDataMode:GKSendDataReliable error:nil];
     
+    
+    if (otherCompletionTime != -1) {
+        //compare completion times
+        if (otherCompletionTime > completionTime) {
+            endText = @"You won!";
+        } else{
+            endText = @"You lost!";
+        }
+    } else {
+        endText = @"Waiting for partner";
+    }
+    
+    mainViewEndText;
+}
+
+-(double)getCompletionTime{
+    return completionTime;
+}
+
+-(NSString*)endText{
+    return endText;
 }
 
 @end
