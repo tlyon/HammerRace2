@@ -19,6 +19,7 @@
 //returns true when successful
 +(BluetoothAndScoring*)getInstance;
 -(void)connectToPeer;
+-(bool)isConnected;
 -(void)start:(SEL)startMethod;
 -(void)end:(SEL)updateText;
 -(NSString*)endText;

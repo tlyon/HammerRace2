@@ -35,6 +35,14 @@ static NSString* endText;
     
 }
 
+-(bool)isConnected{
+    if (myPeerID == nil) {
+        return false;
+    } else{
+        return true;
+    }
+}
+
 - (void)peerPickerController:(GKPeerPickerController *)picker didConnectPeer:(NSString *)peerID
                    toSession:(GKSession *)session
 {
