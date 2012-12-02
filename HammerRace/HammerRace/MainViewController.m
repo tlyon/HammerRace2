@@ -31,6 +31,8 @@ int waitTime = 5;
         if (acceleration.x < 0 && lastXVal > 0 ) {
             percentComplete += pow(acceleration.x + .5, 4);
             //percentComplete += 10;
+            
+            percent.text = [NSString stringWithFormat:@"%d %%",(int)(percentComplete)];
             NSLog(@"Hit value = %f", percentComplete);
         }
         

@@ -11,6 +11,7 @@
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate, UIAccelerometerDelegate>{
     IBOutlet UIImageView *background;
     int last_degrees;
+    IBOutlet UILabel *percent;
     
 }
 
