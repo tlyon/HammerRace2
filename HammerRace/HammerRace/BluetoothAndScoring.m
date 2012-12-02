@@ -11,7 +11,9 @@
 @implementation BluetoothAndScoring
 static BluetoothAndScoring *singleton = nil;
 static NSDate *start_time = nil;
+static NSDate *end_time = nil;
 static NSDate* currentTime = nil;
+static NSDate* otherTime = nil;
 
 +(BluetoothAndScoring*)getInstance{
     @synchronized([BluetoothAndScoring class])
