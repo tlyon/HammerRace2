@@ -26,14 +26,14 @@ int waitTime = 5;
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
     
     if(acceleration.x - lastXVal >= .7 || acceleration.x - lastXVal <= -.7){
-        NSLog(@"Strum event: lastX:%g, X:%g", lastXVal, acceleration.x);
+       // NSLog(@"Strum event: lastX:%g, X:%g", lastXVal, acceleration.x);
         //determine if swing or loading
         if (acceleration.x < 0 && lastXVal > 0 ) {
             percentComplete += pow(acceleration.x + .5, 4);
             //percentComplete += 10;
             
             percent.text = [NSString stringWithFormat:@"%d %%",(int)(percentComplete)];
-            NSLog(@"Hit value = %f", percentComplete);
+           // NSLog(@"Hit value = %f", percentComplete);
         }
         
     }
@@ -48,7 +48,7 @@ int waitTime = 5;
     lastXVal = acceleration.x;
     
     if(acceleration.y<0 && acceleration.x>-1){
-        NSLog(@"degree = %i",(int)((-1-acceleration.x) * 90));
+        //NSLog(@"degree = %i",(int)((-1-acceleration.x) * 90));
         [self rotateImage:background degrees:(int)((-1-acceleration.x) * 90)];
         if(percentComplete>lastpercent){
           [self changeBackground:percentComplete];
@@ -56,10 +56,13 @@ int waitTime = 5;
         }
     
     }
+    else if(acceleration.y>0 && acceleration.x>0){
+        [self rotateImage:background degrees:180];
+    }
     else {
         [self rotateImage:background degrees:0];
     }
-   
+
 }
 
 -(void)resetComplete{
@@ -72,7 +75,7 @@ int waitTime = 5;
     last_degrees = -90;
     lastpercent=25;
     lastXVal = 0;
-    [self changeBackground:55.0];
+    [self changeBackground:0.0];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -142,13 +145,13 @@ int waitTime = 5;
     
     CGFloat modifiedDegrees = degrees;
     if(percentComplete<25){
-        if(degrees>-15)modifiedDegrees=-15;
+        if(degrees>-15 && degrees<90)modifiedDegrees=-15;
     }else if (percentComplete<50){
-        if(degrees>-10)modifiedDegrees=-10;
+        if(degrees>-10 && degrees<90)modifiedDegrees=-10;
     }else if (percentComplete<75){
-        if(degrees>-1)modifiedDegrees=-5;
+        if(degrees>-1 && degrees<90)modifiedDegrees=-5;
     }else if (percentComplete<100){
-        if(degrees>-1)modifiedDegrees=-2;
+        if(degrees>-1 && degrees<90)modifiedDegrees=-2;
     }else{
         
     }
