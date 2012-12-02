@@ -89,6 +89,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9AM-at-DZ1">
+                                <rect key="frame" x="149" y="394" width="512" height="273"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="120"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -96,8 +103,9 @@
                         <outlet property="Counter" destination="Gpa-CI-URq" id="2qI-bj-ZYj"/>
                         <outlet property="background" destination="rmM-Oe-FX3" id="eYb-UH-g6I"/>
                         <outlet property="percent" destination="Btu-oK-629" id="Be9-cu-hE5"/>
-                        <outlet property="scoreDisplay" destination="zRS-xx-ebb" id="h4e-GC-hbi"/>
+                        <outlet property="scoreDisplay" destination="9AM-at-DZ1" id="8mq-0w-CqB"/>
                         <outlet property="startButton" destination="kQZ-Lh-cT2" id="T3F-5B-lFw"/>
+                        <outlet property="winnerDisplay" destination="zRS-xx-ebb" id="Qix-fQ-RBS"/>
                         <segue destination="5" kind="popover" identifier="showAlternate" popoverAnchorBarButtonItem="15" id="22">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
@@ -198,6 +206,7 @@
                 <relationship kind="outlet" name="percent" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreDisplay" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="winnerDisplay" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>

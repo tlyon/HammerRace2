@@ -222,18 +222,21 @@ int GameLength=100;
 }
 
 -(void)endGame{
+    Timer.invalidate;
+    Timer=nil;
+    percent.text=@"100 %";
     BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
     
     if([blue isConnected]){
         [blue end:@selector(updateText)];
     }
     else{
-        //diplay scores and winner
+        scoreDisplay.text = [NSString stringWithFormat:@"%g",(timecount)];
     }
 }
 
 -(void)startTimer{
-    [NSTimer scheduledTimerWithTimeInterval:0.1
+    Timer = [NSTimer scheduledTimerWithTimeInterval:0.1
                                      target:self
                                    selector:@selector(onTick:)
                                    userInfo:nil
@@ -244,7 +247,7 @@ int GameLength=100;
 
 -(void)updateText{
     BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
-    NSString* endText = [blue endText];
+    winnerDisplay.text = [blue endText];
 }
 
 

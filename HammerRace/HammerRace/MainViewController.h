@@ -19,8 +19,10 @@
     IBOutlet UIButton *startButton;
     IBOutlet UILabel *connectionStatus;
     IBOutlet UILabel *scoreDisplay;
+    IBOutlet UILabel *winnerDisplay;
     int countdown;
     NSTimer *countdownTimer;
+    NSTimer *Timer;
     
 }
 
