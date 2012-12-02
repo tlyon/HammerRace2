@@ -20,6 +20,7 @@
     IBOutlet UILabel *connectionStatus;
     IBOutlet UILabel *scoreDisplay;
     int countdown;
+    NSTimer *countdownTimer;
     
 }
 

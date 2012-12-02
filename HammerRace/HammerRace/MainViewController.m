@@ -28,14 +28,14 @@ int GameLength=100;
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
     
     if(acceleration.x - lastXVal >= .7 || acceleration.x - lastXVal <= -.7){
-       // NSLog(@"Strum event: lastX:%g, X:%g", lastXVal, acceleration.x);
+        // NSLog(@"Strum event: lastX:%g, X:%g", lastXVal, acceleration.x);
         //determine if swing or loading
         if (acceleration.x < 0 && lastXVal > 0 ) {
             percentComplete += pow(acceleration.x + .5, 4);
             //percentComplete += 10;
             
             percent.text = [NSString stringWithFormat:@"%d %%",(int)(percentComplete)];
-           // NSLog(@"Hit value = %f", percentComplete);
+            // NSLog(@"Hit value = %f", percentComplete);
         }
         
     }
@@ -44,7 +44,7 @@ int GameLength=100;
     if (percentComplete > GameLength) {
         //do stuff here
         BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
-        [blue end:@selector(updateText)];
+          [blue end:@selector(updateText)];
     }
     
     //wait(&waitTime);
@@ -54,10 +54,10 @@ int GameLength=100;
         //NSLog(@"degree = %i",(int)((-1-acceleration.x) * 90));
         [self rotateImage:background degrees:(int)((-1-acceleration.x) * 90)];
         if(percentComplete>lastpercent){
-          [self changeBackground:percentComplete];
+            [self changeBackground:percentComplete];
             lastpercent+=25;
         }
-    
+        
     }
     else if(acceleration.y>0 && acceleration.x>0){
         [self rotateImage:background degrees:180];
@@ -65,12 +65,12 @@ int GameLength=100;
     else {
         [self rotateImage:background degrees:0];
     }
-
+    
 }
 
 -(void)resetComplete{
     percentComplete = 0;
-        timecount=0.0;
+    timecount=0.0;
 }
 
 - (void)viewDidLoad
@@ -80,9 +80,10 @@ int GameLength=100;
     lastpercent=25;
     lastXVal = 0;
     timecount=0.0;
+    countdown=6;
     [self changeBackground:0.0];
-
-
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -170,7 +171,7 @@ int GameLength=100;
     
     // Commit the changes
     [UIView commitAnimations];
-
+    
 }
 - (void)changeBackground:(float)percentDone{
     NSLog(@"%g",percentDone);
@@ -194,13 +195,26 @@ int GameLength=100;
     }
 }
 
+-(void)onCountdownTick:(NSTimer *)timer {
+    countdown-=1;
+    scoreDisplay.text = [NSString stringWithFormat:@"%i",(countdown)];
+    if(countdown==0){
+        countdownTimer.invalidate;
+        countdownTimer=nil;
+        scoreDisplay.text = @"GO!";
+        [self startTimer];
+    }
+}
+
 -(void)startGame{
     [startButton setHidden:TRUE];
-
-    scoreDisplay.text = @"GO!";
-    NSLog(@"Starting!");
-    countdown=5;
     
+    NSLog(@"Starting!");
+    [self startCountdown];
+    
+}
+
+-(void)startTimer{
     [NSTimer scheduledTimerWithTimeInterval:0.1
                                      target:self
                                    selector:@selector(onTick:)
@@ -209,25 +223,22 @@ int GameLength=100;
     
 }
 
+
 -(void)updateText{
     BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
     NSString* endText = [blue endText];
 }
 
-//- (IBAction)startCountdown:(id)sender
-//{
-//    NSTimer *countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self     selector:@selector(advanceTimer:) userInfo:nil repeats:YES];
-//    NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-//    [runLoop addTimer:countdownTimer forMode:NSDefaultRunLoopMode];
-//}
-//
-//- (void)advanceTimer:(NSTimer *)timer
-//{
-//    [countdown setIntegerValue:([countdown integerValue] - 1)];
-//    if ([countdown integerValue] == 0)
-//    {
-//        // code to stop the timer
-//    }
-//}
+
+- (IBAction)startCountdown
+{
+    countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                      target:self
+                                                    selector:@selector(onCountdownTick:)
+                                                    userInfo:nil
+                                                     repeats:YES];
+    
+}
+
 
 @end
