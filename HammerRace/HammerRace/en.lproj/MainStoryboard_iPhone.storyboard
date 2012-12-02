@@ -71,6 +71,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hua-dV-C0F">
+                                <rect key="frame" x="46" y="220" width="232" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="53"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -78,8 +85,9 @@
                         <outlet property="Counter" destination="vD6-jw-8na" id="tri-nf-Blf"/>
                         <outlet property="background" destination="SSP-ho-Blb" id="sT8-ak-LyE"/>
                         <outlet property="percent" destination="aPj-pT-ZT0" id="mdF-yM-u5V"/>
-                        <outlet property="scoreDisplay" destination="NKk-6t-Z8S" id="lae-Zk-js4"/>
+                        <outlet property="scoreDisplay" destination="Hua-dV-C0F" id="5c5-ay-tR3"/>
                         <outlet property="startButton" destination="flp-zG-Lwc" id="tg2-Lm-co1"/>
+                        <outlet property="winnerDisplay" destination="NKk-6t-Z8S" id="wrK-0Y-CPS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -165,6 +173,31 @@
         <image name="landscape100.png" width="2495" height="2495"/>
         <image name="wood.jpg" width="511" height="208"/>
     </resources>
+    <classes>
+        <class className="FlipsideViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlipsideViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="connect:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="onOffSwitch:"/>
+                <relationship kind="outlet" name="leftHandSwitch" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startGame"/>
+                <relationship kind="action" name="togglePopover:"/>
+                <relationship kind="outlet" name="Counter" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="background" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="connectionStatus" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="percent" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="winnerDisplay" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
