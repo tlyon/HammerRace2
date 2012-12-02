@@ -19,6 +19,7 @@ static double otherCompletionTime = -1;
 static SEL mainViewStart = nil;
 static SEL mainViewEndText = nil;
 static NSString* endText;
+static id mainViewRef;
 
 +(BluetoothAndScoring*)getInstance{
     @synchronized([BluetoothAndScoring class])
@@ -64,16 +65,16 @@ static NSString* endText;
         otherTime = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         if (currentTime != nil) {
             startTime = [NSDate date];
-            mainViewStart;
+            [mainViewRef performSelector:mainViewEndText];
         }
     } else if(endTime != nil){
         [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
         //compare completion times
         if (otherCompletionTime > completionTime) {
-            mainViewEndText;
+            [mainViewRef performSelector:mainViewEndText];
         } else{
             //we lost
-            mainViewEndText;
+            [mainViewRef performSelector:mainViewEndText];
         }
         
     } else{
@@ -89,17 +90,19 @@ static NSString* endText;
     return [super init];
 }
 
--(void)start:(SEL)startMethod{
+-(void)start:(SEL)startMethod :(id)mainView{
+    mainViewRef = mainView;
     currentTime = [NSDate date];
     NSData* dataData = [NSKeyedArchiver archivedDataWithRootObject:currentTime];
     [mySession sendDataToAllPeers:dataData withDataMode:GKSendDataReliable error:nil];
     if (otherTime != nil) {
         currentTime = [NSDate date];
-        mainViewStart;
+        [mainView performSelector:startMethod];
     }
 }
 
--(void)end:(SEL)updateText{
+-(void)end:(SEL)updateText :(id)mainView{
+    mainViewRef = mainView;
     NSDate* endTime = [NSDate date];
     completionTime = [startTime timeIntervalSinceDate:endTime];
     NSData* dateData = [NSData dataWithBytes:&completionTime length:sizeof(completionTime)];
@@ -117,7 +120,7 @@ static NSString* endText;
         endText = @"Waiting for partner";
     }
     
-    mainViewEndText;
+    [mainView performSelector:updateText];
 }
 
 -(double)getCompletionTime{
