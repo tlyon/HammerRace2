@@ -13,6 +13,8 @@
     int last_degrees;
     IBOutlet UILabel *percent;
     int lastpercent;
+    IBOutlet UILabel *Counter;
+    double timecount;
     
 }
 
@@ -25,4 +27,5 @@
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration;
+-(void)onTick:(NSTimer *)timer;
 @end

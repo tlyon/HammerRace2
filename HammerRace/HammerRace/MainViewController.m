@@ -23,6 +23,7 @@
 @synthesize lastXVal;
 @synthesize percentComplete;
 int waitTime = 5;
+
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
     
     if(acceleration.x - lastXVal >= .7 || acceleration.x - lastXVal <= -.7){
@@ -67,6 +68,7 @@ int waitTime = 5;
 
 -(void)resetComplete{
     percentComplete = 0;
+        timecount=0.0;
 }
 
 - (void)viewDidLoad
@@ -75,7 +77,14 @@ int waitTime = 5;
     last_degrees = -90;
     lastpercent=25;
     lastXVal = 0;
+    timecount=0.0;
     [self changeBackground:0.0];
+    [NSTimer scheduledTimerWithTimeInterval:0.1
+                                     target:self
+                                   selector:@selector(onTick:)
+                                   userInfo:nil
+                                    repeats:YES];
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -178,6 +187,10 @@ int waitTime = 5;
     }else{
         background.image = [UIImage imageNamed:@"landscape100.png"];
     }
+}
+-(void)onTick:(NSTimer *)timer {
+    timecount+=0.1;
+    Counter.text = [NSString stringWithFormat:@"%g",(timecount)];
 }
 
 
