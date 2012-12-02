@@ -42,9 +42,7 @@ int GameLength=100;
     
     //determine if completed
     if (percentComplete > GameLength) {
-        //do stuff here
-        BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
-        [blue end:@selector(updateText)];
+        [self endGame];
     }
     
     //wait(&waitTime);
@@ -210,8 +208,28 @@ int GameLength=100;
     [startButton setHidden:TRUE];
     
     NSLog(@"Starting!");
-    [self startCountdown];
+    //[self startCountdown];
     
+    BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
+    if([blue isConnected]){
+       [blue start:@selector(startCountdown)]; 
+    }
+    else{
+        [self startCountdown];
+    }
+
+    
+}
+
+-(void)endGame{
+    BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
+    
+    if([blue isConnected]){
+        [blue end:@selector(updateText)];
+    }
+    else{
+        //diplay scores and winner
+    }
 }
 
 -(void)startTimer{
