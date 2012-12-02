@@ -49,7 +49,7 @@ static NSTimeInterval* otherTime = nil;
 - (void) receiveData:(NSData *)data fromPeer:(NSString *)peer
            inSession:(GKSession *)session context:(void *)context{
     if (otherTime == nil) {
-        otherTime = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    //    otherTime = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     } else{
         NSDate* opponentsTime = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         //compare completion times
@@ -73,9 +73,9 @@ static NSTimeInterval* otherTime = nil;
 
 -(void)end{
     NSDate* endTime = [NSDate date];
-    completionTime = [startTime timeIntervalSinceDate:endTime];
-    NSData* dataData = [NSKeyedArchiver archivedDataWithRootObject:completionTime];
-    [mySession sendDataToAllPeers:dataData withDataMode:GKSendDataReliable error:nil];
+//    completionTime = [startTime timeIntervalSinceDate:endTime];
+  //  NSData* dataData = [NSKeyedArchiver archivedDataWithRootObject:completionTime];
+  //  [mySession sendDataToAllPeers:dataData withDataMode:GKSendDataReliable error:nil];
     
 }
 

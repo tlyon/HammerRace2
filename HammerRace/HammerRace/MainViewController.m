@@ -50,7 +50,11 @@ int waitTime = 5;
     if(acceleration.y<0 && acceleration.x>-1){
         NSLog(@"degree = %i",(int)((-1-acceleration.x) * 90));
         [self rotateImage:background degrees:(int)((-1-acceleration.x) * 90)];
-        [self changeBackground:percentComplete];
+        if(percentComplete>lastpercent){
+          [self changeBackground:percentComplete];
+            lastpercent+=25;
+        }
+    
     }
     else {
         [self rotateImage:background degrees:0];
@@ -66,6 +70,7 @@ int waitTime = 5;
 {
     [super viewDidLoad];
     last_degrees = -90;
+    lastpercent=25;
     lastXVal = 0;
     [self changeBackground:55.0];
 	// Do any additional setup after loading the view, typically from a nib.
