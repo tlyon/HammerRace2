@@ -146,6 +146,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="connect:" destination="5" eventType="touchDown" id="Rk3-db-uQu"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="dKT-Tz-LVR">
                                 <rect key="frame" x="212" y="78" width="79" height="27"/>
