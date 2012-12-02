@@ -11,12 +11,12 @@
 @implementation BluetoothAndScoring
 static BluetoothAndScoring *singleton = nil;
 static NSDate *startTime = nil;
-static NSDate *otherStartTime = nil;
+static NSDate *otherTime = nil;
 static NSDate *endTime = nil;
-static NSDate *otherEndTime = nil;
 static NSDate* currentTime = nil;
 static double completionTime = -1;
 static double otherCompletionTime = -1;
+static SEL mainViewStart = nil;
 
 +(BluetoothAndScoring*)getInstance{
     @synchronized([BluetoothAndScoring class])
@@ -50,11 +50,20 @@ static double otherCompletionTime = -1;
 
 - (void) receiveData:(NSData *)data fromPeer:(NSString *)peer
            inSession:(GKSession *)session context:(void *)context{
-    if (otherStartTime == nil) {
-        otherStartTime = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    if (otherTime == nil) {
+        otherTime = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        if (currentTime != nil) {
+            startTime = [NSDate date];
+            mainViewStart;
+        }
     } else{
-        NSDate* opponentsTime = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
         //compare completion times
+        if (otherCompletionTime > completionTime) {
+            //we win
+        } else{
+            //we lost
+        }
         
     }
     
@@ -67,10 +76,14 @@ static double otherCompletionTime = -1;
     return [super init];
 }
 
--(void)start{
+-(void)start:(SEL)startMethod{
     currentTime = [NSDate date];
     NSData* dataData = [NSKeyedArchiver archivedDataWithRootObject:currentTime];
     [mySession sendDataToAllPeers:dataData withDataMode:GKSendDataReliable error:nil];
+    if (otherTime != nil) {
+        currentTime = [NSDate date];
+        mainViewStart;
+    }
 }
 
 -(void)end{
