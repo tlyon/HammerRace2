@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "BluetoothAndScoring.h"
 // This is defined in Math.h
 #define M_PI   3.14159265358979323846264338327950288   /* pi */
 #define HITS_NEEDED 50
@@ -42,7 +43,8 @@ int GameLength=100;
     //determine if completed
     if (percentComplete > GameLength) {
         //do stuff here
-        
+        BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
+        [blue end:@selector(updateText)];
     }
     
     //wait(&waitTime);
@@ -205,6 +207,11 @@ int GameLength=100;
                                    userInfo:nil
                                     repeats:YES];
     
+}
+
+-(void)updateText{
+    BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
+    NSString* endText = [blue endText];
 }
 
 //- (IBAction)startCountdown:(id)sender

@@ -8,6 +8,7 @@
 
 #import "FlipsideViewController.h"
 
+
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate, UIAccelerometerDelegate>{
     IBOutlet UIImageView *background;
     int last_degrees;
@@ -32,4 +33,5 @@
 -(void)onTick:(NSTimer *)timer;
 -(IBAction)startGame;
 -(void)endGame;
+-(void)updateText;
 @end

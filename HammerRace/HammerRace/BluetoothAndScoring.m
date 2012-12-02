@@ -91,7 +91,7 @@ static NSString* endText;
     }
 }
 
--(NSString*)end:(SEL)updateText{
+-(void)end:(SEL)updateText{
     NSDate* endTime = [NSDate date];
     completionTime = [startTime timeIntervalSinceDate:endTime];
     NSData* dateData = [NSData dataWithBytes:&completionTime length:sizeof(completionTime)];

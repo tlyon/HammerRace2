@@ -20,7 +20,9 @@
 +(BluetoothAndScoring*)getInstance;
 -(void)connectToPeer;
 -(void)start:(SEL)startMethod;
--(NSString*)end;
+-(void)end;
+-(NSString*)endText;
+-(double)getCompletionTime;
 
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID;
 
