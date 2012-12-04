@@ -65,7 +65,7 @@ static id mainViewRef;
         otherTime = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         if (currentTime != nil) {
             startTime = [NSDate date];
-            [mainViewRef performSelector:mainViewEndText];
+            [mainViewRef performSelector:mainViewStart];
         }
     } else if(endTime != nil){
         [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
@@ -92,6 +92,7 @@ static id mainViewRef;
 
 -(void)start:(SEL)startMethod :(id)mainView{
     mainViewRef = mainView;
+    mainViewStart = startMethod;
     currentTime = [NSDate date];
     NSData* dataData = [NSKeyedArchiver archivedDataWithRootObject:currentTime];
     [mySession sendDataToAllPeers:dataData withDataMode:GKSendDataReliable error:nil];
