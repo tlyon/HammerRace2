@@ -71,11 +71,14 @@ static id mainViewRef;
         [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
         //compare completion times
         if (otherCompletionTime > completionTime) {
-            [mainViewRef performSelector:mainViewEndText];
+            endText = @"You won!";
+        } else if(otherCompletionTime == completionTime){
+            endText = @"You tied!";
         } else{
             //we lost
-            [mainViewRef performSelector:mainViewEndText];
+            endText = @"You lost!";
         }
+        [mainViewRef performSelector:mainViewEndText];
         
     } else{
         [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
@@ -114,6 +117,8 @@ static id mainViewRef;
         //compare completion times
         if (otherCompletionTime > completionTime) {
             endText = @"You won!";
+        } else if(otherCompletionTime == completionTime){
+            endText = @"You tied!";
         } else{
             endText = @"You lost!";
         }
