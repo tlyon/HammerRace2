@@ -459,6 +459,58 @@
         <image name="wood.jpg" width="511" height="208"/>
         <image name="woodback.png" width="511" height="1260"/>
     </resources>
+    <classes>
+        <class className="FlipsideViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlipsideViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="connect:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="onOffSwitch:"/>
+                <relationship kind="outlet" name="bluetoothConnected" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leftHandSwitch" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startGame"/>
+                <relationship kind="outlet" name="Counter" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="background" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="connectionStatus" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="percent" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="winnerDisplay" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ScoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clearLeaderboard"/>
+                <relationship kind="action" name="dismissModalVC"/>
+                <relationship kind="outlet" name="sinit1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sinit10" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sinit2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sinit3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sinit4" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sinit5" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sinit6" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sinit7" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sinit8" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sinit9" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sscore1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sscore10" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sscore2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sscore3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sscore4" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sscore5" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sscore6" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sscore7" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sscore8" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sscore9" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
