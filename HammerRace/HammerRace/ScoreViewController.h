@@ -36,5 +36,6 @@
 -(void)updateLeaderboardStorage:(double)score forPerson:(NSString*)person;
 -(void)updateLeaderboard;
 -(IBAction)clearLeaderboard;
+- (IBAction) dismissModalVC;
 
 @end

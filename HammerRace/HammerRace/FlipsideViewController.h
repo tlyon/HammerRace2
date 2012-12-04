@@ -16,6 +16,7 @@
 
 @interface FlipsideViewController : UIViewController{
     IBOutlet UISwitch *leftHandSwitch;
+    IBOutlet UILabel *bluetoothConnected;
 }
 
 @property (weak, nonatomic) id <FlipsideViewControllerDelegate> delegate;

@@ -83,9 +83,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zRS-xx-ebb">
-                                <rect key="frame" x="118" y="113" width="533" height="214"/>
+                                <rect key="frame" x="30" y="91" width="676" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="108"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="80"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -136,7 +136,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5LS-2W-V8I">
-                                <rect key="frame" x="32" y="172" width="160" height="44"/>
+                                <rect key="frame" x="32" y="138" width="253" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Connect to Partner">
@@ -150,19 +150,8 @@
                                     <action selector="connect:" destination="5" eventType="touchDown" id="Rk3-db-uQu"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="dKT-Tz-LVR">
-                                <rect key="frame" x="212" y="78" width="79" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Left-handed mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hNS-Rf-R5C">
-                                <rect key="frame" x="32" y="81" width="138" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="omM-4u-6H6">
-                                <rect key="frame" x="32" y="271" width="160" height="44"/>
+                                <rect key="frame" x="32" y="271" width="253" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="High Scores">
@@ -178,10 +167,20 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dYS-go-ftd">
+                                <rect key="frame" x="40" y="104" width="237" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="bluetoothConnected" destination="dYS-go-ftd" id="OVD-GC-cKY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6" sceneMemberID="firstResponder"/>
             </objects>
@@ -460,56 +459,6 @@
         <image name="wood.jpg" width="511" height="208"/>
         <image name="woodback.png" width="511" height="1260"/>
     </resources>
-    <classes>
-        <class className="FlipsideViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlipsideViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="connect:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="onOffSwitch:"/>
-                <relationship kind="outlet" name="leftHandSwitch" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startGame"/>
-                <relationship kind="outlet" name="Counter" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="background" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="connectionStatus" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="percent" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scoreDisplay" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="winnerDisplay" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ScoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScoreViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="clearLeaderboard"/>
-                <relationship kind="outlet" name="sinit1" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sinit10" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sinit2" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sinit3" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sinit4" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sinit5" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sinit6" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sinit7" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sinit8" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sinit9" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sscore1" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sscore10" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sscore2" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sscore3" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sscore4" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sscore5" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sscore6" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sscore7" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sscore8" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sscore9" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

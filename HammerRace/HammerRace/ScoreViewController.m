@@ -198,5 +198,8 @@ storage = [NSUserDefaults standardUserDefaults];
     [self updateLeaderboard];
 }
 
+- (IBAction) dismissModalVC {
+    [self.presentingViewController dismissModalViewControllerAnimated:YES];
+}
 
 @end

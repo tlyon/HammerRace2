@@ -249,8 +249,7 @@ int GameLength=100;
     Timer=nil;
     percent.text=@"100 %";
     BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
-    [self rotateImage:background degrees:0];
-    
+    [self changeBackground:percentComplete];
     ScoreViewController* scoreboard = [[ScoreViewController alloc] init]; //First, we create an instance of SomeScript
     
     if([blue isConnected]){

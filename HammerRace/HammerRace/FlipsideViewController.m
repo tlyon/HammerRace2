@@ -26,6 +26,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     // load leftHandSwitch state from plist
+    BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
+    if ([blue isConnected]) {
+        bluetoothConnected.text = @"Connected";
+        bluetoothConnected.textColor = [UIColor greenColor];
+    }
+    else{
+        bluetoothConnected.text = @"Not Connected";
+        bluetoothConnected.textColor = [UIColor grayColor];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,6 +50,14 @@
 -(IBAction)connect:(id)sender{
     BluetoothAndScoring* bluetooth = [BluetoothAndScoring getInstance];
     [bluetooth connectToPeer];
+    if ([bluetooth isConnected]) {
+        bluetoothConnected.text = @"Connected";
+        bluetoothConnected.textColor = [UIColor greenColor];
+    }
+    else{
+        bluetoothConnected.text = @"Not Connected";
+        bluetoothConnected.textColor = [UIColor grayColor];
+    }
 }
 
 #pragma mark - Actions
