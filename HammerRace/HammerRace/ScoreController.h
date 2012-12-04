@@ -52,6 +52,7 @@
       
 }
 
+-(void)updateLeaderboard:(float)score forPerson:(NSString*)person;
 
 
 @end
