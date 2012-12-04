@@ -7,6 +7,7 @@
 //
 
 #import "FlipsideViewController.h"
+#import "ScoreViewController.h"
 
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate, UIAccelerometerDelegate>{
@@ -24,6 +25,7 @@
     NSTimer *countdownTimer;
     NSTimer *Timer;
     BOOL running;
+    ScoreViewController *scoreboard;
     
 }
 

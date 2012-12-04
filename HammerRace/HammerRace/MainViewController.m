@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "BluetoothAndScoring.h"
+#import "ScoreViewController.h"
 // This is defined in Math.h
 #define M_PI   3.14159265358979323846264338327950288   /* pi */
 #define HITS_NEEDED 50
@@ -70,6 +71,8 @@ int GameLength=100;
 -(void)resetComplete{
     percentComplete = 0;
     timecount=0.0;
+    percent.text = [NSString stringWithFormat:@"%d %%",(int)(percentComplete)];
+    Counter.text = [NSString stringWithFormat:@"%g",timecount];
 }
 
 - (void)viewDidLoad
@@ -80,9 +83,11 @@ int GameLength=100;
     lastpercent=25;
     lastXVal = 0;
     timecount=0.0;
-    countdown=6;
-    [self changeBackground:0.0];
     
+    [self changeBackground:0.0];
+    NSLog(@"in didload");
+    
+    scoreboard = [[ScoreViewController alloc] init];   
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -219,6 +224,9 @@ int GameLength=100;
 
 -(void)startGame{
     [startButton setHidden:TRUE];
+    countdown=6;
+    [self resetComplete];
+    
     
     NSLog(@"Starting!");
     //[self startCountdown];
@@ -241,14 +249,25 @@ int GameLength=100;
     Timer=nil;
     percent.text=@"100 %";
     BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
+    [self rotateImage:background degrees:0];
+    
+    ScoreViewController* scoreboard = [[ScoreViewController alloc] init]; //First, we create an instance of SomeScript
     
     if([blue isConnected]){
         [blue end:@selector(updateText) :self];
         scoreDisplay.text = [NSString stringWithFormat:@"%g",(timecount)];
+        
+        
     }
     else{
         scoreDisplay.text = [NSString stringWithFormat:@"%g",(timecount)];
+        
     }
+    [scoreboard updateLeaderboardStorage:timecount forPerson:@"bbb"];
+    
+    [startButton setTitle:@"Restart" forState:UIControlStateNormal];
+    [startButton setHidden:FALSE];
+    
 }
 
 -(void)startTimer{
