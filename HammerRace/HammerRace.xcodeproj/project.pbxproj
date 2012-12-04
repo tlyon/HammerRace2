@@ -30,6 +30,11 @@
 		D257CB8B1663C39E005308F0 /* hammer.png in Resources */ = {isa = PBXBuildFile; fileRef = D257CB8A1663C39E005308F0 /* hammer.png */; };
 		D257CB921663C9D7005308F0 /* nail.png in Resources */ = {isa = PBXBuildFile; fileRef = D257CB911663C9D7005308F0 /* nail.png */; };
 		D257CB9A1663D26A005308F0 /* landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = D257CB991663D26A005308F0 /* landscape.png */; };
+		D28519B2166E63A50078DB8F /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28519B1166E63A50078DB8F /* ScoreViewController.m */; };
+		D28519B9166E7AB40078DB8F /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = D28519B5166E7AB40078DB8F /* icon57.png */; };
+		D28519BA166E7AB40078DB8F /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = D28519B6166E7AB40078DB8F /* icon72.png */; };
+		D28519BB166E7AB40078DB8F /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = D28519B7166E7AB40078DB8F /* icon114.png */; };
+		D28519BC166E7AB40078DB8F /* icon144.png in Resources */ = {isa = PBXBuildFile; fileRef = D28519B8166E7AB40078DB8F /* icon144.png */; };
 		D2943F80166B134500B45E3E /* wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2943F7F166B134500B45E3E /* wood.jpg */; };
 		D299D7481664091300750CA0 /* landscape0.png in Resources */ = {isa = PBXBuildFile; fileRef = D299D7471664091300750CA0 /* landscape0.png */; };
 		D299D74E1664092000750CA0 /* landscape25.png in Resources */ = {isa = PBXBuildFile; fileRef = D299D74A1664092000750CA0 /* landscape25.png */; };
@@ -37,7 +42,6 @@
 		D299D7501664092000750CA0 /* landscape75.png in Resources */ = {isa = PBXBuildFile; fileRef = D299D74C1664092000750CA0 /* landscape75.png */; };
 		D299D7511664092000750CA0 /* landscape100.png in Resources */ = {isa = PBXBuildFile; fileRef = D299D74D1664092000750CA0 /* landscape100.png */; };
 		D2B20592166DBD55002B92F3 /* woodback.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B20591166DBD55002B92F3 /* woodback.png */; };
-		D2B20595166DC236002B92F3 /* ScoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B20594166DC236002B92F3 /* ScoreController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,12 @@
 		D257CB8A1663C39E005308F0 /* hammer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hammer.png; sourceTree = "<group>"; };
 		D257CB911663C9D7005308F0 /* nail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nail.png; sourceTree = "<group>"; };
 		D257CB991663D26A005308F0 /* landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape.png; sourceTree = "<group>"; };
+		D28519B0166E63A50078DB8F /* ScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
+		D28519B1166E63A50078DB8F /* ScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
+		D28519B5166E7AB40078DB8F /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
+		D28519B6166E7AB40078DB8F /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
+		D28519B7166E7AB40078DB8F /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114.png; sourceTree = "<group>"; };
+		D28519B8166E7AB40078DB8F /* icon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon144.png; sourceTree = "<group>"; };
 		D2943F7F166B134500B45E3E /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wood.jpg; path = HammerRace/wood.jpg; sourceTree = "<group>"; };
 		D299D7471664091300750CA0 /* landscape0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape0.png; sourceTree = "<group>"; };
 		D299D74A1664092000750CA0 /* landscape25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape25.png; sourceTree = "<group>"; };
@@ -89,8 +99,6 @@
 		D299D74C1664092000750CA0 /* landscape75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape75.png; sourceTree = "<group>"; };
 		D299D74D1664092000750CA0 /* landscape100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape100.png; sourceTree = "<group>"; };
 		D2B20591166DBD55002B92F3 /* woodback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = woodback.png; path = HammerRace/woodback.png; sourceTree = "<group>"; };
-		D2B20593166DC236002B92F3 /* ScoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreController.h; sourceTree = "<group>"; };
-		D2B20594166DC236002B92F3 /* ScoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,8 +167,8 @@
 				34C2FF0A1652C781009CE61D /* AppDelegate.m */,
 				34C2FF121652C781009CE61D /* MainStoryboard_iPhone.storyboard */,
 				34C2FF151652C781009CE61D /* MainStoryboard_iPad.storyboard */,
-				D2B20593166DC236002B92F3 /* ScoreController.h */,
-				D2B20594166DC236002B92F3 /* ScoreController.m */,
+				D28519B0166E63A50078DB8F /* ScoreViewController.h */,
+				D28519B1166E63A50078DB8F /* ScoreViewController.m */,
 				34C2FF181652C781009CE61D /* MainViewController.h */,
 				34C2FF191652C781009CE61D /* MainViewController.m */,
 				34C2FF1B1652C781009CE61D /* FlipsideViewController.h */,
@@ -206,6 +214,10 @@
 		D257CB8C1663C3A2005308F0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D28519B5166E7AB40078DB8F /* icon57.png */,
+				D28519B6166E7AB40078DB8F /* icon72.png */,
+				D28519B7166E7AB40078DB8F /* icon114.png */,
+				D28519B8166E7AB40078DB8F /* icon144.png */,
 				D2B20591166DBD55002B92F3 /* woodback.png */,
 				D299D74A1664092000750CA0 /* landscape25.png */,
 				D299D74B1664092000750CA0 /* landscape50.png */,
@@ -307,6 +319,10 @@
 				D299D7511664092000750CA0 /* landscape100.png in Resources */,
 				D2943F80166B134500B45E3E /* wood.jpg in Resources */,
 				D2B20592166DBD55002B92F3 /* woodback.png in Resources */,
+				D28519B9166E7AB40078DB8F /* icon57.png in Resources */,
+				D28519BA166E7AB40078DB8F /* icon72.png in Resources */,
+				D28519BB166E7AB40078DB8F /* icon114.png in Resources */,
+				D28519BC166E7AB40078DB8F /* icon144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +362,7 @@
 				34C2FF1A1652C781009CE61D /* MainViewController.m in Sources */,
 				34C2FF1D1652C781009CE61D /* FlipsideViewController.m in Sources */,
 				3444A1EE1652E73B00F2DD71 /* BluetoothAndScoring.m in Sources */,
-				D2B20595166DC236002B92F3 /* ScoreController.m in Sources */,
+				D28519B2166E63A50078DB8F /* ScoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

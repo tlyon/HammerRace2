@@ -1,18 +1,18 @@
 //
-//  ScoreController.m
+//  iViewController.m
 //  HammerRace
 //
-//  Created by Scott Schroeder on 12/3/12.
+//  Created by Scott Schroeder on 12/4/12.
 //  Copyright (c) 2012 CprE388. All rights reserved.
 //
 
-#import "ScoreController.h"
+#import "iViewController.h"
 
-@interface ScoreController ()
+@interface iViewController ()
 
 @end
 
-@implementation ScoreController
+@implementation iViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,18 +26,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)updateLeaderboard:(float)score forPerson:(NSString*)person{
-    
-    
 }
 
 @end
