@@ -36,6 +36,8 @@
 		D299D74F1664092000750CA0 /* landscape50.png in Resources */ = {isa = PBXBuildFile; fileRef = D299D74B1664092000750CA0 /* landscape50.png */; };
 		D299D7501664092000750CA0 /* landscape75.png in Resources */ = {isa = PBXBuildFile; fileRef = D299D74C1664092000750CA0 /* landscape75.png */; };
 		D299D7511664092000750CA0 /* landscape100.png in Resources */ = {isa = PBXBuildFile; fileRef = D299D74D1664092000750CA0 /* landscape100.png */; };
+		D2B20592166DBD55002B92F3 /* woodback.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B20591166DBD55002B92F3 /* woodback.png */; };
+		D2B20595166DC236002B92F3 /* ScoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B20594166DC236002B92F3 /* ScoreController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,9 @@
 		D299D74B1664092000750CA0 /* landscape50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape50.png; sourceTree = "<group>"; };
 		D299D74C1664092000750CA0 /* landscape75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape75.png; sourceTree = "<group>"; };
 		D299D74D1664092000750CA0 /* landscape100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape100.png; sourceTree = "<group>"; };
+		D2B20591166DBD55002B92F3 /* woodback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = woodback.png; path = HammerRace/woodback.png; sourceTree = "<group>"; };
+		D2B20593166DC236002B92F3 /* ScoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreController.h; sourceTree = "<group>"; };
+		D2B20594166DC236002B92F3 /* ScoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +159,8 @@
 				34C2FF0A1652C781009CE61D /* AppDelegate.m */,
 				34C2FF121652C781009CE61D /* MainStoryboard_iPhone.storyboard */,
 				34C2FF151652C781009CE61D /* MainStoryboard_iPad.storyboard */,
+				D2B20593166DC236002B92F3 /* ScoreController.h */,
+				D2B20594166DC236002B92F3 /* ScoreController.m */,
 				34C2FF181652C781009CE61D /* MainViewController.h */,
 				34C2FF191652C781009CE61D /* MainViewController.m */,
 				34C2FF1B1652C781009CE61D /* FlipsideViewController.h */,
@@ -199,6 +206,7 @@
 		D257CB8C1663C3A2005308F0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D2B20591166DBD55002B92F3 /* woodback.png */,
 				D299D74A1664092000750CA0 /* landscape25.png */,
 				D299D74B1664092000750CA0 /* landscape50.png */,
 				D299D74C1664092000750CA0 /* landscape75.png */,
@@ -298,6 +306,7 @@
 				D299D7501664092000750CA0 /* landscape75.png in Resources */,
 				D299D7511664092000750CA0 /* landscape100.png in Resources */,
 				D2943F80166B134500B45E3E /* wood.jpg in Resources */,
+				D2B20592166DBD55002B92F3 /* woodback.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +346,7 @@
 				34C2FF1A1652C781009CE61D /* MainViewController.m in Sources */,
 				34C2FF1D1652C781009CE61D /* FlipsideViewController.m in Sources */,
 				3444A1EE1652E73B00F2DD71 /* BluetoothAndScoring.m in Sources */,
+				D2B20595166DC236002B92F3 /* ScoreController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
