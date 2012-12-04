@@ -176,17 +176,27 @@ int GameLength=100;
 - (void)changeBackground:(float)percentDone{
     NSLog(@"%g",percentDone);
     if(percentDone<GameLength/4){
-        background.image = [UIImage imageNamed:@"landscape0.png"];
+        background.image = [self getImage:@"landscape0.png"];
     }else if (percentDone<GameLength/2){
-        background.image = [UIImage imageNamed:@"landscape25.png"];
+        background.image = [self getImage:@"landscape25.png"];
     }else if (percentDone<GameLength*3/4){
-        background.image = [UIImage imageNamed:@"landscape50.png"];
+        background.image = [self getImage:@"landscape50.png"];
     }else if (percentDone<GameLength){
-        background.image = [UIImage imageNamed:@"landscape75.png"];
+        background.image = [self getImage:@"landscape75.png"];
     }else{
-        background.image = [UIImage imageNamed:@"landscape100.png"];
+        background.image = [self getImage:@"landscape100.png"];
     }
 }
+
+-(UIImage*)getImage:(NSString*)fileName{
+    @autoreleasepool {
+        NSString *thumbnailFile = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], fileName];
+        UIImage *image  = [UIImage imageWithContentsOfFile:thumbnailFile];
+        return image;
+    }
+    
+}
+
 -(void)onTick:(NSTimer *)timer {
     timecount+=0.1;
     Counter.text = [NSString stringWithFormat:@"%g",(timecount)];
