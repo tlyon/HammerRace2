@@ -61,14 +61,20 @@ static id mainViewRef;
 
 - (void) receiveData:(NSData *)data fromPeer:(NSString *)peer
            inSession:(GKSession *)session context:(void *)context{
+    NSLog(@"received data: ");
     if (otherTime == nil) {
         otherTime = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        NSLog(@"%@\n", [otherTime descriptionWithLocale: @"yyyy-MM-dd" ]);
         if (currentTime != nil) {
             startTime = [NSDate date];
             [mainViewRef performSelector:mainViewStart];
         }
-    } else if(endTime != nil){
-        [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
+    }
+    [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
+    NSLog(@"%f\n", otherCompletionTime);
+    
+    if(endTime != nil){
+        NSLog(@"Enters completion block");
         //compare completion times
         if (otherCompletionTime > completionTime) {
             endText = @"You won!";
@@ -80,9 +86,7 @@ static id mainViewRef;
         }
         [mainViewRef performSelector:mainViewEndText];
         
-    } else{
-        [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
-    }
+    } 
     
     
 }
