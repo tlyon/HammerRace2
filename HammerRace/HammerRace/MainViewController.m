@@ -26,6 +26,9 @@
 @synthesize percentComplete;
 int waitTime = 5;
 int GameLength=100;
+AVAudioPlayer *newPlayer;
+NSString *path;
+NSURL *fileURL;
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
     if(running){
     if(acceleration.x - lastXVal >= .7 || acceleration.x - lastXVal <= -.7){
@@ -85,6 +88,7 @@ int GameLength=100;
     timecount=0.0;
     
     [self changeBackground:0.0];
+
     NSLog(@"in didload");
     
     scoreboard = [[ScoreViewController alloc] init];   
@@ -217,6 +221,10 @@ int GameLength=100;
         countdownTimer.invalidate;
         countdownTimer=nil;
         scoreDisplay.text = @"GO!";
+        path = [[NSBundle mainBundle] pathForResource:@"go-go-go" ofType:@"wav"];
+        fileURL = [NSURL fileURLWithPath: path];
+        newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+        [newPlayer play];
         [self startTimer];
         running=true;
     }
@@ -255,11 +263,24 @@ int GameLength=100;
     if([blue isConnected]){
         [blue end:@selector(updateText) :self];
         scoreDisplay.text = [NSString stringWithFormat:@"%g",(timecount)];
+        //set audio file to be played
+        path = [[NSBundle mainBundle] pathForResource:@"applause5" ofType:@"wav"];
+        fileURL = [NSURL fileURLWithPath: path];
+        newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+         [newPlayer play];
+         //plays a sound here for winner and loser?
+
         
         
     }
     else{
         scoreDisplay.text = [NSString stringWithFormat:@"%g",(timecount)];
+         //plays a sound here
+        path = [[NSBundle mainBundle] pathForResource:@"cheer8k" ofType:@"wav"];
+        fileURL = [NSURL fileURLWithPath: path];
+        newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+        [newPlayer play];
+        
         
     }
     [scoreboard updateLeaderboardStorage:timecount forPerson:@"bbb"];
