@@ -76,6 +76,8 @@ NSURL *fileURL;
     timecount=0.0;
     percent.text = [NSString stringWithFormat:@"%d %%",(int)(percentComplete)];
     Counter.text = [NSString stringWithFormat:@"%g",timecount];
+    [self changeBackground:percentComplete];
+    winnerDisplay.text = @"";
 }
 
 - (void)viewDidLoad
@@ -183,7 +185,7 @@ NSURL *fileURL;
     
 }
 - (void)changeBackground:(float)percentDone{
-    NSLog(@"%g",percentDone);
+    NSLog(@"changing background percent = %g",percentDone);
     if(percentDone<GameLength/4){
         background.image = [self getImage:@"landscape0.png"];
     }else if (percentDone<GameLength/2){
