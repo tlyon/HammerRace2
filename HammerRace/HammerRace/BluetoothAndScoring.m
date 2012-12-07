@@ -89,11 +89,14 @@ static id mainViewRef;
         //compare completion times
         if (otherCompletionTime > completionTime) {
             endText = @"You won!";
+            [self reset];
         } else if(otherCompletionTime == completionTime){
             endText = @"You tied!";
+            [self reset];
         } else{
             //we lost
             endText = @"You lost!";
+            [self reset];
         }
         [mainViewRef performSelector:mainViewEndText];
         
@@ -132,10 +135,13 @@ static id mainViewRef;
         //compare completion times
         if (otherCompletionTime > completionTime) {
             endText = @"You won!";
+            [self reset];
         } else if(otherCompletionTime == completionTime){
             endText = @"You tied!";
+            [self reset];
         } else{
             endText = @"You lost!";
+            [self reset];
         }
     } else {
         endText = @"Waiting for partner";
