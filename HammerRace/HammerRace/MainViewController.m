@@ -78,8 +78,7 @@ NSURL *fileURL;
     Counter.text = [NSString stringWithFormat:@"%g",timecount];
     lastpercent=0;
     winnerDisplay.text = @"";
-    BluetoothAndScoring *blue = [BluetoothAndScoring getInstance];
-    [blue reset];
+
 }
 
 - (void)viewDidLoad
@@ -293,9 +292,11 @@ NSURL *fileURL;
         
     }
     [scoreboard updateLeaderboardStorage:timecount forPerson:@"bbb"];
+    [blue reset];
     
     [startButton setTitle:@"Restart" forState:UIControlStateNormal];
     [startButton setHidden:FALSE];
+    
     
 }
 
