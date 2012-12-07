@@ -128,7 +128,7 @@ static id mainViewRef;
     completionTime = withTime;
     NSData* dateData = [NSData dataWithBytes:&completionTime length:sizeof(completionTime)];
     [mySession sendDataToAllPeers:dateData withDataMode:GKSendDataReliable error:nil];
-    
+    mainViewEndText = updateText;
     
     if (otherCompletionTime != -1) {
         //compare completion times
