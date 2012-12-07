@@ -79,6 +79,7 @@ static id mainViewRef;
             [mainViewRef performSelector:mainViewStart];
             return;
         }
+        return;
     }
     
     [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
