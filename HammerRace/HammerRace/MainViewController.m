@@ -76,7 +76,7 @@ NSURL *fileURL;
     timecount=0.0;
     percent.text = [NSString stringWithFormat:@"%d %%",(int)(percentComplete)];
     Counter.text = [NSString stringWithFormat:@"%g",timecount];
-    [self changeBackground:percentComplete];
+    lastpercent=0;
     winnerDisplay.text = @"";
     BluetoothAndScoring *blue = [BluetoothAndScoring getInstance];
     [blue reset];
