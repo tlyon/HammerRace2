@@ -78,8 +78,6 @@ NSURL *fileURL;
     Counter.text = [NSString stringWithFormat:@"%g",timecount];
     [self changeBackground:percentComplete];
     winnerDisplay.text = @"";
-    BluetoothAndScoring *blue = [BluetoothAndScoring getInstance];
-    [blue reset];
 }
 
 - (void)viewDidLoad
