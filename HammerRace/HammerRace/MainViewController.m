@@ -10,11 +10,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import "BluetoothAndScoring.h"
 #import "ScoreViewController.h"
-// This is defined in Math.h
+
 #define M_PI   3.14159265358979323846264338327950288   /* pi */
 #define HITS_NEEDED 50
-
-// Our conversion definition
 #define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
 
 @interface MainViewController ()
@@ -23,23 +21,21 @@
 
 @implementation MainViewController
 @synthesize lastXVal;
+//variable keeping track of progress
 @synthesize percentComplete;
 int waitTime = 5;
+//length of game
 int GameLength=100;
 AVAudioPlayer *newPlayer;
 NSString *path;
 NSURL *fileURL;
+/*Method of accelerometer that gets called with each detected acceleration*/
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
     if(running){
     if(acceleration.x - lastXVal >= .7 || acceleration.x - lastXVal <= -.7){
-        // NSLog(@"Strum event: lastX:%g, X:%g", lastXVal, acceleration.x);
-        //determine if swing or loading
         if (acceleration.x < 0 && lastXVal > 0 ) {
             percentComplete += pow(acceleration.x + .5, 4);
-            //percentComplete += 10;
-            
             percent.text = [NSString stringWithFormat:@"%d %%",(int)(percentComplete)];
-            // NSLog(@"Hit value = %f", percentComplete);
         }
         
     }
@@ -48,29 +44,30 @@ NSURL *fileURL;
     if (percentComplete > GameLength) {
         [self endGame];
     }
-    
-    //wait(&waitTime);
+    //save the last accel to compare with the next one
     lastXVal = acceleration.x;
     
     if(acceleration.y<0 && acceleration.x>-1){
-        //NSLog(@"degree = %i",(int)((-1-acceleration.x) * 90));
         [self rotateImage:background degrees:(int)((-1-acceleration.x) * 90)];
+        /*if the percent hits a multiple of 25 change the background image*/
         if(percentComplete>lastpercent){
             [self changeBackground:percentComplete];
             lastpercent+=25;
         }
         
     }
+        //check if the device is turned the wrong direction
     else if(acceleration.y>0 && acceleration.x>0){
         [self rotateImage:background degrees:180];
     }
+        //check if the device is turned past the nail
     else {
         [self rotateImage:background degrees:0];
     }
     }
     
 }
-
+/*resets the complete variables for another run of the game*/
 -(void)resetComplete{
     percentComplete = 0;
     timecount=0.0;
@@ -80,7 +77,7 @@ NSURL *fileURL;
     winnerDisplay.text = @"";
 
 }
-
+/*Initialize variables upon load of the view*/
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -91,18 +88,13 @@ NSURL *fileURL;
     timecount=0.0;
     
     [self changeBackground:0.0];
-
-   // NSLog(@"in didload");
-    
+    //initialize a scoreboard variable
     scoreboard = [[ScoreViewController alloc] init];   
-    
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewWillAppear:(BOOL) animated
@@ -115,7 +107,6 @@ NSURL *fileURL;
     [UIAccelerometer sharedAccelerometer].delegate = nil;
 }
 
-#pragma mark - Flipside View Controller
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
 {
@@ -154,7 +145,7 @@ NSURL *fileURL;
         [self performSegueWithIdentifier:@"showAlternate" sender:sender];
     }
 }
-
+/*method to rotate the background image according to a set degree provided by the accelerometer*/
 - (void)rotateImage:(UIImageView *)image degrees:(CGFloat)degrees
 {
     // Setup the animation
@@ -162,7 +153,7 @@ NSURL *fileURL;
     [UIView setAnimationDuration:0.1];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     [UIView setAnimationBeginsFromCurrentState:YES];
-    
+    //do checks for the percentcomplete to avoid going through the nail
     CGFloat modifiedDegrees = degrees;
     if(percentComplete<GameLength/4){
         if(degrees>-15 && degrees<90)modifiedDegrees=-15;
@@ -185,8 +176,8 @@ NSURL *fileURL;
     [UIView commitAnimations];
     
 }
+/*Change the background image based on the percent complete*/
 - (void)changeBackground:(float)percentDone{
-   // NSLog(@"changing background percent = %g",percentDone);
     if(percentDone<GameLength/4){
         background.image = [self getImage:@"landscape0.png"];
     }else if (percentDone<GameLength/2){
@@ -199,7 +190,7 @@ NSURL *fileURL;
         background.image = [self getImage:@"landscape100.png"];
     }
 }
-
+/*Get image method to load background image*/
 -(UIImage*)getImage:(NSString*)fileName{
     @autoreleasepool {
         NSString *thumbnailFile = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], fileName];
@@ -208,15 +199,16 @@ NSURL *fileURL;
     }
     
 }
-
+/*Timer tick used for the upcounting timer*/
 -(void)onTick:(NSTimer *)timer {
     timecount+=0.1;
     Counter.text = [NSString stringWithFormat:@"%g",(timecount)];
+    //When the timer hits 1 remove the "Go" message
     if ((int)timecount>1) {
         scoreDisplay.text = @"";
     }
 }
-
+/*Timer tick used for the downcounting countdown time, shows countdown on screen as well as ticks*/
 -(void)onCountdownTick:(NSTimer *)timer {
     countdown-=1;
     scoreDisplay.text = [NSString stringWithFormat:@"%i",(countdown)];
@@ -224,7 +216,7 @@ NSURL *fileURL;
     fileURL = [NSURL fileURLWithPath: path];
     newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
     [newPlayer play];
-    
+    //when the countdown hits 0 say go along with a sound
     if(countdown==0){
         countdownTimer.invalidate;
         countdownTimer=nil;
@@ -237,7 +229,7 @@ NSURL *fileURL;
         running=true;
     }
 }
-
+/*Method to start the game, hides the start button and either waits for bluetooth partner or starts*/
 -(void)startGame{
     [startButton setHidden:TRUE];
     countdown=6;
@@ -245,7 +237,6 @@ NSURL *fileURL;
     
     
     NSLog(@"Starting!");
-    //[self startCountdown];
     
     BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
     if([blue isConnected]){
@@ -258,7 +249,7 @@ NSURL *fileURL;
 
     
 }
-
+/*Method called when the percentcomplete hits 100, invalidates the timer and sends a message to the other partner if connected by bluetooth.  Also plays a sound and records score.  */
 -(void)endGame{
     running=false;
     Timer.invalidate;
@@ -291,15 +282,15 @@ NSURL *fileURL;
         
         
     }
+    //Update leaderboard with score and person bbb,bbb is temporary and can be replaced by initials when functionality is added.  
     [scoreboard updateLeaderboardStorage:timecount forPerson:@"bbb"];
-    //[blue reset];
-    
+    //Display the restart button
     [startButton setTitle:@"Restart" forState:UIControlStateNormal];
     [startButton setHidden:FALSE];
     
     
 }
-
+/*Method to create/start a timer counting up*/
 -(void)startTimer{
     Timer = [NSTimer scheduledTimerWithTimeInterval:0.1
                                      target:self
@@ -309,13 +300,13 @@ NSURL *fileURL;
     
 }
 
-
+/*Method to update the winner text in a multiplayer game*/
 -(void)updateText{
     BluetoothAndScoring* blue = [BluetoothAndScoring getInstance];
     winnerDisplay.text = [blue endText];
 }
 
-
+/*method to start countdown timer*/
 - (IBAction)startCountdown
 {
     countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1

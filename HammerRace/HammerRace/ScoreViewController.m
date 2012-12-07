@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	// Update leaderboard 
     [self updateLeaderboard];
 }
 
@@ -35,8 +35,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+/*Updates the leaderboard view, done when the view is loaded*/
 -(void)updateLeaderboard{
+    //storage - plist storage of leaderboard
     storage = [NSUserDefaults standardUserDefaults];
     [storage synchronize];
     if([storage doubleForKey:@"score1"]==100){
@@ -103,7 +104,7 @@
 
 }
 
-
+/*Update the storage of the leaderboard.*/
 -(void)updateLeaderboardStorage:(double)score forPerson:(NSString*)person{
     NSLog(@"Updating leaderboard with score %g",score);
     
@@ -261,6 +262,7 @@
     [storage synchronize];
 }
 
+/*reset the leaderboard to blanks*/
 -(IBAction) clearLeaderboard{
 storage = [NSUserDefaults standardUserDefaults];
     [storage setDouble:100.0 forKey:@"score1"];
@@ -286,7 +288,7 @@ storage = [NSUserDefaults standardUserDefaults];
     [storage synchronize];
     [self updateLeaderboard];
 }
-
+/*dismiss modal view of the leaderboard*/
 - (IBAction) dismissModalVC {
     [self.presentingViewController dismissModalViewControllerAnimated:YES];
 }

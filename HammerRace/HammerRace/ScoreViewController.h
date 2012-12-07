@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ScoreViewController : UIViewController{
+    /*Labels for leaderboard*/
     IBOutlet UILabel *sscore1;
     IBOutlet UILabel *sscore2;
     IBOutlet UILabel *sscore3;
