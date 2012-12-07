@@ -93,7 +93,7 @@ NSURL *fileURL;
     
     [self changeBackground:0.0];
 
-    NSLog(@"in didload");
+   // NSLog(@"in didload");
     
     scoreboard = [[ScoreViewController alloc] init];   
     
@@ -187,7 +187,7 @@ NSURL *fileURL;
     
 }
 - (void)changeBackground:(float)percentDone{
-    NSLog(@"changing background percent = %g",percentDone);
+   // NSLog(@"changing background percent = %g",percentDone);
     if(percentDone<GameLength/4){
         background.image = [self getImage:@"landscape0.png"];
     }else if (percentDone<GameLength/2){
