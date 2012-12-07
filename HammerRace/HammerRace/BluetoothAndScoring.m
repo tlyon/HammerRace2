@@ -31,6 +31,16 @@ static id mainViewRef;
     return nil;
 }
 
+-(void)reset{
+    startTime = nil;
+    otherTime = nil;
+    endTime = nil;
+    currentTime = nil;
+    completionTime = -1;
+    otherCompletionTime = -1;
+    endText = nil;
+}
+
 -(void)connectToPeer{
     [myPicker show];
     
