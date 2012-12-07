@@ -12,7 +12,6 @@
 static BluetoothAndScoring *singleton = nil;
 static NSDate *startTime = nil;
 static NSDate *otherTime = nil;
-static NSDate *endTime = nil;
 static NSDate* currentTime = nil;
 static double completionTime = -1;
 static double otherCompletionTime = -1;
@@ -32,10 +31,9 @@ static id mainViewRef;
 }
 
 -(void)reset{
-    if (endTime != nil) {
+    if (completionTime != -1) {
         startTime = nil;
         otherTime = nil;
-        endTime = nil;
         currentTime = nil;
         completionTime = -1;
         otherCompletionTime = -1;

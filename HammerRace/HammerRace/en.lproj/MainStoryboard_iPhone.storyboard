@@ -394,6 +394,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
                 <relationship kind="action" name="startGame"/>
+                <relationship kind="action" name="togglePopover:"/>
                 <relationship kind="outlet" name="Counter" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="background" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="connectionStatus" candidateClass="UILabel"/>
