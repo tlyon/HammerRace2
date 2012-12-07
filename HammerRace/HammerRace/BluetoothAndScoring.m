@@ -79,9 +79,12 @@ static id mainViewRef;
             startTime = [NSDate date];
             [mainViewRef performSelector:mainViewStart];
         }
-    } else if(otherTime != nil && endTime != nil){
-        [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
-        NSLog(@"%f\n", otherCompletionTime);
+    }
+    [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
+    NSLog(@"%f\n", otherCompletionTime);
+    
+    if(endTime != nil){
+        NSLog(@"Enters completion block");
         //compare completion times
         if (otherCompletionTime > completionTime) {
             endText = @"You won!";
