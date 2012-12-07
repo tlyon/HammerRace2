@@ -268,7 +268,7 @@ NSURL *fileURL;
     ScoreViewController* scoreboard = [[ScoreViewController alloc] init]; //First, we create an instance of SomeScript
     
     if([blue isConnected]){
-        [blue end:@selector(updateText) :self];
+        [blue end:timecount :@selector(updateText) :self];
         scoreDisplay.text = [NSString stringWithFormat:@"%g",(timecount)];
         //set audio file to be played
 //        path = [[NSBundle mainBundle] pathForResource:@"applause5" ofType:@"wav"];
