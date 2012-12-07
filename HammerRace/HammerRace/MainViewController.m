@@ -226,10 +226,10 @@ NSURL *fileURL;
         countdownTimer.invalidate;
         countdownTimer=nil;
         scoreDisplay.text = @"GO!";
-        path = [[NSBundle mainBundle] pathForResource:@"go-go-go" ofType:@"wav"];
-        fileURL = [NSURL fileURLWithPath: path];
-        newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
-        [newPlayer play];
+//        path = [[NSBundle mainBundle] pathForResource:@"go-go-go" ofType:@"wav"];
+//        fileURL = [NSURL fileURLWithPath: path];
+//        newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+//        [newPlayer play];
         [self startTimer];
         running=true;
     }
@@ -269,10 +269,10 @@ NSURL *fileURL;
         [blue end:@selector(updateText) :self];
         scoreDisplay.text = [NSString stringWithFormat:@"%g",(timecount)];
         //set audio file to be played
-        path = [[NSBundle mainBundle] pathForResource:@"applause5" ofType:@"wav"];
-        fileURL = [NSURL fileURLWithPath: path];
-        newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
-         [newPlayer play];
+//        path = [[NSBundle mainBundle] pathForResource:@"applause5" ofType:@"wav"];
+//        fileURL = [NSURL fileURLWithPath: path];
+//        newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+//         [newPlayer play];
          //plays a sound here for winner and loser?
 
         
@@ -281,10 +281,10 @@ NSURL *fileURL;
     else{
         scoreDisplay.text = [NSString stringWithFormat:@"%g",(timecount)];
          //plays a sound here
-        path = [[NSBundle mainBundle] pathForResource:@"cheer8k" ofType:@"wav"];
-        fileURL = [NSURL fileURLWithPath: path];
-        newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
-        [newPlayer play];
+//        path = [[NSBundle mainBundle] pathForResource:@"cheer8k" ofType:@"wav"];
+//        fileURL = [NSURL fileURLWithPath: path];
+//        newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+//        [newPlayer play];
         
         
     }
