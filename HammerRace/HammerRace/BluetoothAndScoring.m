@@ -79,9 +79,12 @@ static id mainViewRef;
             startTime = [NSDate date];
             [mainViewRef performSelector:mainViewStart];
         }
-    } else if(otherTime != nil && endTime != nil){
-        [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
-        NSLog(@"%f\n", otherCompletionTime);
+    }
+    [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
+    NSLog(@"%f\n", otherCompletionTime);
+    
+    if(endTime != nil){
+        NSLog(@"Enters completion block");
         //compare completion times
         if (otherCompletionTime > completionTime) {
             endText = @"You won!";
@@ -93,7 +96,7 @@ static id mainViewRef;
         }
         [mainViewRef performSelector:mainViewEndText];
         
-    } 
+    }
     
     
 }
@@ -119,7 +122,7 @@ static id mainViewRef;
 -(void)end:(double)withTime:(SEL)updateText :(id)mainView{
     mainViewRef = mainView;
     NSDate* endTime = [NSDate date];
-    completionTime = withTime;
+    completionTime = [startTime timeIntervalSinceDate:endTime];
     NSData* dateData = [NSData dataWithBytes:&completionTime length:sizeof(completionTime)];
     [mySession sendDataToAllPeers:dateData withDataMode:GKSendDataReliable error:nil];
     
