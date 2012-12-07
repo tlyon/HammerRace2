@@ -43,7 +43,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vD6-jw-8na">
-                                <rect key="frame" x="20" y="415" width="98" height="39"/>
+                                <rect key="frame" x="5" y="396" width="196" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="43"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -72,9 +72,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hua-dV-C0F">
-                                <rect key="frame" x="46" y="220" width="232" height="90"/>
+                                <rect key="frame" x="5" y="220" width="308" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="53"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
