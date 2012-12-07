@@ -29,9 +29,6 @@
 		34C2FF321652C782009CE61D /* HammerRaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C2FF311652C782009CE61D /* HammerRaceTests.m */; };
 		34C9B32F167168D4008DA74B /* pang.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34C9B32E167168D4008DA74B /* pang.wav */; };
 		6342EA0E16700EBB00096D04 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6342EA0D16700EBB00096D04 /* AVFoundation.framework */; };
-		6342EA11167011CD00096D04 /* applause5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6342EA10167011CD00096D04 /* applause5.wav */; };
-		6342EA131670136C00096D04 /* go-go-go.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6342EA121670136C00096D04 /* go-go-go.wav */; };
-		6342EA151670137500096D04 /* cheer8k.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6342EA141670137500096D04 /* cheer8k.wav */; };
 		D257CB8B1663C39E005308F0 /* hammer.png in Resources */ = {isa = PBXBuildFile; fileRef = D257CB8A1663C39E005308F0 /* hammer.png */; };
 		D257CB921663C9D7005308F0 /* nail.png in Resources */ = {isa = PBXBuildFile; fileRef = D257CB911663C9D7005308F0 /* nail.png */; };
 		D257CB9A1663D26A005308F0 /* landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = D257CB991663D26A005308F0 /* landscape.png */; };
@@ -90,9 +87,6 @@
 		34C2FF311652C782009CE61D /* HammerRaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HammerRaceTests.m; sourceTree = "<group>"; };
 		34C9B32E167168D4008DA74B /* pang.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pang.wav; sourceTree = "<group>"; };
 		6342EA0D16700EBB00096D04 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		6342EA10167011CD00096D04 /* applause5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = applause5.wav; path = ../../applause5.wav; sourceTree = "<group>"; };
-		6342EA121670136C00096D04 /* go-go-go.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "go-go-go.wav"; path = "../../go-go-go.wav"; sourceTree = "<group>"; };
-		6342EA141670137500096D04 /* cheer8k.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = cheer8k.wav; path = ../../cheer8k.wav; sourceTree = "<group>"; };
 		D257CB8A1663C39E005308F0 /* hammer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hammer.png; sourceTree = "<group>"; };
 		D257CB911663C9D7005308F0 /* nail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nail.png; sourceTree = "<group>"; };
 		D257CB991663D26A005308F0 /* landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape.png; sourceTree = "<group>"; };
@@ -141,9 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				34C9B32E167168D4008DA74B /* pang.wav */,
-				6342EA141670137500096D04 /* cheer8k.wav */,
-				6342EA121670136C00096D04 /* go-go-go.wav */,
-				6342EA10167011CD00096D04 /* applause5.wav */,
 				6342EA0D16700EBB00096D04 /* AVFoundation.framework */,
 				349B3B7A1666B027007426C5 /* GameKit.framework */,
 				34C2FF001652C781009CE61D /* HammerRace */,
@@ -339,9 +330,6 @@
 				D28519BA166E7AB40078DB8F /* icon72.png in Resources */,
 				D28519BB166E7AB40078DB8F /* icon114.png in Resources */,
 				D28519BC166E7AB40078DB8F /* icon144.png in Resources */,
-				6342EA11167011CD00096D04 /* applause5.wav in Resources */,
-				6342EA131670136C00096D04 /* go-go-go.wav in Resources */,
-				6342EA151670137500096D04 /* cheer8k.wav in Resources */,
 				34C9B32F167168D4008DA74B /* pang.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
