@@ -37,7 +37,6 @@ static id mainViewRef;
         currentTime = nil;
         completionTime = -1;
         otherCompletionTime = -1;
-        endText = nil;
     }
 }
 
