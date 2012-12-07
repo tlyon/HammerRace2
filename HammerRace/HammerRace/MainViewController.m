@@ -229,10 +229,10 @@ NSURL *fileURL;
         countdownTimer.invalidate;
         countdownTimer=nil;
         scoreDisplay.text = @"GO!";
-//        path = [[NSBundle mainBundle] pathForResource:@"go-go-go" ofType:@"wav"];
-//        fileURL = [NSURL fileURLWithPath: path];
-//        newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
-//        [newPlayer play];
+        path = [[NSBundle mainBundle] pathForResource:@"gun_shot" ofType:@"wav"];
+        fileURL = [NSURL fileURLWithPath: path];
+        newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+        [newPlayer play];
         [self startTimer];
         running=true;
     }
