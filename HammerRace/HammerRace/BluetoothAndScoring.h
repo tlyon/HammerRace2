@@ -24,7 +24,6 @@
 -(void)end:(double)withTime:(SEL)updateText:(id)mainView;
 -(NSString*)endText;
 -(double)getCompletionTime;
--(void)reset;
 
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID;
 
