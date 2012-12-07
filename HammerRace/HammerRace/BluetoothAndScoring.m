@@ -109,10 +109,10 @@ static id mainViewRef;
     }
 }
 
--(void)end:(SEL)updateText :(id)mainView{
+-(void)end:(double)withTime:(SEL)updateText :(id)mainView{
     mainViewRef = mainView;
     NSDate* endTime = [NSDate date];
-    completionTime = [startTime timeIntervalSinceDate:endTime];
+    completionTime = withTime;
     NSData* dateData = [NSData dataWithBytes:&completionTime length:sizeof(completionTime)];
     [mySession sendDataToAllPeers:dateData withDataMode:GKSendDataReliable error:nil];
     
