@@ -86,7 +86,7 @@ static id mainViewRef;
     
     [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
     NSLog(@"%f\n", otherCompletionTime);
-    if(endTime != nil){
+    if(completionTime != -1){
         
         //compare completion times
         if (otherCompletionTime > completionTime) {
