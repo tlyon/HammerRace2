@@ -16,16 +16,14 @@
 }
 
 //called from view when wanting to connect to a find a partner
-//returns true when successful
 +(BluetoothAndScoring*)getInstance;
+-(void)reset;
 -(void)connectToPeer;
 -(bool)isConnected;
 -(void)start:(SEL)startMethod:(id)mainView;
 -(void)end:(double)withTime:(SEL)updateText:(id)mainView;
 -(NSString*)endText;
 -(double)getCompletionTime;
--(void)reset;
-
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID;
 
 @end
