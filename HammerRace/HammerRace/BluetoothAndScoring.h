@@ -21,7 +21,7 @@
 -(void)connectToPeer;
 -(bool)isConnected;
 -(void)start:(SEL)startMethod:(id)mainView;
--(void)end:(double)withTime:(SEL)updateText:(id)mainView;
+-(void)end:(SEL)updateText:(id)mainView;
 -(NSString*)endText;
 -(double)getCompletionTime;
 
