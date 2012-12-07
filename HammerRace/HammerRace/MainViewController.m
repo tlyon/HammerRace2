@@ -292,7 +292,7 @@ NSURL *fileURL;
         
     }
     [scoreboard updateLeaderboardStorage:timecount forPerson:@"bbb"];
-    [blue reset];
+    //[blue reset];
     
     [startButton setTitle:@"Restart" forState:UIControlStateNormal];
     [startButton setHidden:FALSE];
