@@ -80,10 +80,14 @@ static id mainViewRef;
         if (currentTime != nil) {
             startTime = [NSDate date];
             [mainViewRef performSelector:mainViewStart];
+            return;
         }
-    } else if(otherTime != nil && endTime != nil){
-        [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
-        NSLog(@"%f\n", otherCompletionTime);
+    }
+    
+    [data getBytes:&otherCompletionTime length:sizeof(otherCompletionTime)];
+    NSLog(@"%f\n", otherCompletionTime);
+    if(endTime != nil){
+        
         //compare completion times
         if (otherCompletionTime > completionTime) {
             endText = @"You won!";
