@@ -217,6 +217,11 @@ NSURL *fileURL;
 -(void)onCountdownTick:(NSTimer *)timer {
     countdown-=1;
     scoreDisplay.text = [NSString stringWithFormat:@"%i",(countdown)];
+    path = [[NSBundle mainBundle] pathForResource:@"pang" ofType:@"wav"];
+    fileURL = [NSURL fileURLWithPath: path];
+    newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+    [newPlayer play];
+    
     if(countdown==0){
         countdownTimer.invalidate;
         countdownTimer=nil;

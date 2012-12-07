@@ -27,6 +27,7 @@
 		34C2FF271652C782009CE61D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C2FEFC1652C781009CE61D /* Foundation.framework */; };
 		34C2FF2F1652C782009CE61D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34C2FF2D1652C782009CE61D /* InfoPlist.strings */; };
 		34C2FF321652C782009CE61D /* HammerRaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C2FF311652C782009CE61D /* HammerRaceTests.m */; };
+		34C9B32F167168D4008DA74B /* pang.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34C9B32E167168D4008DA74B /* pang.wav */; };
 		6342EA0E16700EBB00096D04 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6342EA0D16700EBB00096D04 /* AVFoundation.framework */; };
 		6342EA11167011CD00096D04 /* applause5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6342EA10167011CD00096D04 /* applause5.wav */; };
 		6342EA131670136C00096D04 /* go-go-go.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6342EA121670136C00096D04 /* go-go-go.wav */; };
@@ -87,6 +88,7 @@
 		34C2FF2E1652C782009CE61D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		34C2FF301652C782009CE61D /* HammerRaceTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HammerRaceTests.h; sourceTree = "<group>"; };
 		34C2FF311652C782009CE61D /* HammerRaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HammerRaceTests.m; sourceTree = "<group>"; };
+		34C9B32E167168D4008DA74B /* pang.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pang.wav; sourceTree = "<group>"; };
 		6342EA0D16700EBB00096D04 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6342EA10167011CD00096D04 /* applause5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = applause5.wav; path = ../../applause5.wav; sourceTree = "<group>"; };
 		6342EA121670136C00096D04 /* go-go-go.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "go-go-go.wav"; path = "../../go-go-go.wav"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		34C2FEEB1652C781009CE61D = {
 			isa = PBXGroup;
 			children = (
+				34C9B32E167168D4008DA74B /* pang.wav */,
 				6342EA141670137500096D04 /* cheer8k.wav */,
 				6342EA121670136C00096D04 /* go-go-go.wav */,
 				6342EA10167011CD00096D04 /* applause5.wav */,
@@ -339,6 +342,7 @@
 				6342EA11167011CD00096D04 /* applause5.wav in Resources */,
 				6342EA131670136C00096D04 /* go-go-go.wav in Resources */,
 				6342EA151670137500096D04 /* cheer8k.wav in Resources */,
+				34C9B32F167168D4008DA74B /* pang.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
